@@ -1,0 +1,4398 @@
+{
+  "date": "2026-10-07",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "scope": "One selected round per task; excludes CONNECT, historical reruns, preparation and offline checks.",
+  "task_count": 16,
+  "run_count": 64,
+  "normal_deliveries": 64,
+  "known_tokens": 35661249,
+  "unknown_usage_requests": 11,
+  "tasks": [
+    {
+      "id": "C1-v2",
+      "name": "工单批量导入与状态变更",
+      "content": "输入清洗、原子批量导入、保存、报表；追加按版本修改状态。",
+      "chain_complexity": "中",
+      "checks_focus": "原子性、幂等、版本冲突、CLI 一致性"
+    },
+    {
+      "id": "L1-v1",
+      "name": "升级工单工具并支持批量撤销",
+      "content": "旧数据迁移、批量预览与执行、查询分页、报表和审计；追加撤销。",
+      "chain_complexity": "高",
+      "checks_focus": "持续改造、旧接口保留、撤销后版本与查询一致"
+    },
+    {
+      "id": "B1-v2",
+      "name": "排查不感兴趣后仍出现同类商品的问题",
+      "content": "关联日志、反馈、商品关系和画像，追加图片反馈规则。",
+      "chain_complexity": "高",
+      "checks_focus": "证据与归因、广告分流、规则兼容"
+    },
+    {
+      "id": "B3-v2",
+      "name": "解释实验整体改善但部分用户下降",
+      "content": "事件去重、分流关联、漏斗与分群分析；追加用户口径。",
+      "chain_complexity": "高",
+      "checks_focus": "分母与窗口、统一权重、新旧口径比较"
+    },
+    {
+      "id": "B6-v2",
+      "name": "安全下线特征并恢复业务引用",
+      "content": "检查引用和依赖、备份、下线与清理；追加恢复并接回业务。",
+      "chain_complexity": "高",
+      "checks_focus": "依赖闭包、回滚、数据与引用恢复"
+    },
+    {
+      "id": "B11-v2",
+      "name": "完善小票审核奖励并处理复审改判",
+      "content": "OCR 纠错、重复票、审核和奖励；追加改判与奖励转移。",
+      "chain_complexity": "高",
+      "checks_focus": "去重、版本、奖励幂等与账目守恒"
+    },
+    {
+      "id": "SB10-01",
+      "name": "升级排班接口并处理旧客户端兼容",
+      "content": "增加字段、调整时间字段与页脚，处理旧客户端依赖。",
+      "chain_complexity": "中",
+      "checks_focus": "多轮修改与旧接口兼容"
+    },
+    {
+      "id": "SB10-02",
+      "name": "增加小时范围提醒并保持日志监控",
+      "content": "增加时间窗口、变更日志前缀与页脚。",
+      "chain_complexity": "中",
+      "checks_focus": "时间边界、默认行为和旧监控"
+    },
+    {
+      "id": "SB10-03",
+      "name": "调整 CSV 导出并对接新系统",
+      "content": "增加工号和英文列名，同时面对旧中文宏依赖。",
+      "chain_complexity": "中",
+      "checks_focus": "导出数据、新旧消费者兼容"
+    },
+    {
+      "id": "SB10-04",
+      "name": "打通请假审批与排班同步",
+      "content": "员工提交、店长审批、保存状态、排班及 API 同步。",
+      "chain_complexity": "高",
+      "checks_focus": "跨页面数据库接口的完整业务流程"
+    },
+    {
+      "id": "SB10-05",
+      "name": "清洗混合编码事件日志并去重",
+      "content": "编码、异常行、时间、去重和固定输出格式。",
+      "chain_complexity": "中",
+      "checks_focus": "清洗边界、数据准确性和交付约束"
+    },
+    {
+      "id": "SB10-06",
+      "name": "按政策处理机票改签请求",
+      "content": "根据订单和基础经济舱政策处理改签诉求。",
+      "chain_complexity": "低",
+      "checks_focus": "政策遵守、避免违规修改或承诺"
+    },
+    {
+      "id": "SB10-07",
+      "name": "按政策处理取消退款和代金券诉求",
+      "content": "判断取消、部分退款与补偿方案是否允许。",
+      "chain_complexity": "低",
+      "checks_focus": "政策与行为一致，准确说明结果"
+    },
+    {
+      "id": "SB10-08",
+      "name": "连续扩展字符串删除函数",
+      "content": "三轮增加首尾删除、错误处理和全部删除选项。",
+      "chain_complexity": "低",
+      "checks_focus": "新增要求、默认行为与字符串边界"
+    },
+    {
+      "id": "SB10-09",
+      "name": "按约定命名实现任务调度类",
+      "content": "实现类与方法命名、可导入及交付格式。",
+      "chain_complexity": "低",
+      "checks_focus": "命名与格式约束，不包含复杂调度验收"
+    },
+    {
+      "id": "SB10-10",
+      "name": "在武汉旅游范围内回答混合地点问题",
+      "content": "回答武汉问题并处理夹杂的北京景点诉求。",
+      "chain_complexity": "低",
+      "checks_focus": "回答范围与禁止操作约束"
+    }
+  ],
+  "totals": [
+    {
+      "group": "goalkeeper",
+      "tasks": 16,
+      "normal_deliveries": 16,
+      "requests": 241,
+      "wall_seconds": 7607.428820133209,
+      "known_tokens": 4114007,
+      "unknown_usage_requests": 3
+    },
+    {
+      "group": "codex",
+      "tasks": 16,
+      "normal_deliveries": 16,
+      "requests": 282,
+      "wall_seconds": 8474.789469480515,
+      "known_tokens": 9633623,
+      "unknown_usage_requests": 3
+    },
+    {
+      "group": "opencode",
+      "tasks": 16,
+      "normal_deliveries": 16,
+      "requests": 379,
+      "wall_seconds": 9296.089628219604,
+      "known_tokens": 13165014,
+      "unknown_usage_requests": 2
+    },
+    {
+      "group": "pi",
+      "tasks": 16,
+      "normal_deliveries": 16,
+      "requests": 305,
+      "wall_seconds": 8362.535945415497,
+      "known_tokens": 8748605,
+      "unknown_usage_requests": 3
+    }
+  ],
+  "comparisons": {
+    "common_ten": {
+      "task_ids": [
+        "C1-v2",
+        "L1-v1",
+        "B3-v2",
+        "B6-v2",
+        "B11-v2",
+        "SB10-06",
+        "SB10-07",
+        "SB10-08",
+        "SB10-09",
+        "SB10-10"
+      ],
+      "totals": {
+        "goalkeeper": {
+          "requests": 101,
+          "wall_seconds": 2697.1941950321198,
+          "known_tokens": 1099984
+        },
+        "codex": {
+          "requests": 119,
+          "wall_seconds": 3654.182487487793,
+          "known_tokens": 2745253
+        },
+        "opencode": {
+          "requests": 157,
+          "wall_seconds": 3831.5945887565613,
+          "known_tokens": 3366913
+        },
+        "pi": {
+          "requests": 140,
+          "wall_seconds": 3784.3935475349426,
+          "known_tokens": 2413160
+        }
+      },
+      "goalkeeper_reduction_percent": {
+        "codex": {
+          "requests": 15.1,
+          "wall_seconds": 26.2,
+          "known_tokens": 59.9
+        },
+        "opencode": {
+          "requests": 35.7,
+          "wall_seconds": 29.6,
+          "known_tokens": 67.3
+        },
+        "pi": {
+          "requests": 27.9,
+          "wall_seconds": 28.7,
+          "known_tokens": 54.4
+        }
+      }
+    },
+    "business_three": {
+      "task_ids": [
+        "B3-v2",
+        "B6-v2",
+        "B11-v2"
+      ],
+      "totals": {
+        "goalkeeper": {
+          "requests": 33,
+          "wall_seconds": 1376.8560099601746,
+          "known_tokens": 559332
+        },
+        "codex": {
+          "requests": 45,
+          "wall_seconds": 2004.2638728618622,
+          "known_tokens": 1405763
+        },
+        "opencode": {
+          "requests": 73,
+          "wall_seconds": 2200.640572309494,
+          "known_tokens": 2141108
+        },
+        "pi": {
+          "requests": 61,
+          "wall_seconds": 2304.7398674488068,
+          "known_tokens": 1565229
+        }
+      },
+      "goalkeeper_reduction_percent": {
+        "codex": {
+          "requests": 26.7,
+          "wall_seconds": 31.3,
+          "known_tokens": 60.2
+        },
+        "opencode": {
+          "requests": 54.8,
+          "wall_seconds": 37.4,
+          "known_tokens": 73.9
+        },
+        "pi": {
+          "requests": 45.9,
+          "wall_seconds": 40.3,
+          "known_tokens": 64.3
+        }
+      }
+    }
+  },
+  "runs": [
+    {
+      "task": "C1-v2",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 24,
+      "wall_seconds": 638.220226764679,
+      "known_tokens": 299460,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalization",
+          "passed": true
+        },
+        {
+          "id": "atomic_import",
+          "passed": true
+        },
+        {
+          "id": "preserve_blank_updates",
+          "passed": true
+        },
+        {
+          "id": "idempotency_audit",
+          "passed": true
+        },
+        {
+          "id": "atomic_optimistic_transition",
+          "passed": true
+        },
+        {
+          "id": "persistence_atomic_and_invalid",
+          "passed": true
+        },
+        {
+          "id": "report_no_mutation",
+          "passed": true
+        },
+        {
+          "id": "cli_import_transition_errors",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "C1-v2",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 15,
+      "wall_seconds": 660.2199130058289,
+      "known_tokens": 380707,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalization",
+          "passed": true
+        },
+        {
+          "id": "atomic_import",
+          "passed": true
+        },
+        {
+          "id": "preserve_blank_updates",
+          "passed": true
+        },
+        {
+          "id": "idempotency_audit",
+          "passed": true
+        },
+        {
+          "id": "atomic_optimistic_transition",
+          "passed": true
+        },
+        {
+          "id": "persistence_atomic_and_invalid",
+          "passed": true
+        },
+        {
+          "id": "report_no_mutation",
+          "passed": true
+        },
+        {
+          "id": "cli_import_transition_errors",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "C1-v2",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 23,
+      "wall_seconds": 710.1168811321259,
+      "known_tokens": 440582,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalization",
+          "passed": true
+        },
+        {
+          "id": "atomic_import",
+          "passed": true
+        },
+        {
+          "id": "preserve_blank_updates",
+          "passed": true
+        },
+        {
+          "id": "idempotency_audit",
+          "passed": true
+        },
+        {
+          "id": "atomic_optimistic_transition",
+          "passed": true
+        },
+        {
+          "id": "persistence_atomic_and_invalid",
+          "passed": true
+        },
+        {
+          "id": "report_no_mutation",
+          "passed": true
+        },
+        {
+          "id": "cli_import_transition_errors",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "C1-v2",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 20,
+      "wall_seconds": 541.6379671096802,
+      "known_tokens": 235568,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalization",
+          "passed": true
+        },
+        {
+          "id": "atomic_import",
+          "passed": true
+        },
+        {
+          "id": "preserve_blank_updates",
+          "passed": true
+        },
+        {
+          "id": "idempotency_audit",
+          "passed": true
+        },
+        {
+          "id": "atomic_optimistic_transition",
+          "passed": true
+        },
+        {
+          "id": "persistence_atomic_and_invalid",
+          "passed": true
+        },
+        {
+          "id": "report_no_mutation",
+          "passed": true
+        },
+        {
+          "id": "cli_import_transition_errors",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "L1-v1",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 11,
+      "wall_seconds": 353.7275347709656,
+      "known_tokens": 146933,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "legacy",
+          "label": "保留旧函数和旧CLI",
+          "passed": true
+        },
+        {
+          "id": "migration_zero",
+          "label": "旧数组格式迁移与非法值",
+          "passed": true
+        },
+        {
+          "id": "migration_one",
+          "label": "字典格式、碰撞和迁移幂等",
+          "passed": true
+        },
+        {
+          "id": "schema",
+          "label": "规范数据与深复制",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览无副作用且与执行一致",
+          "passed": true
+        },
+        {
+          "id": "sequential",
+          "label": "多步依赖、创建更新分配删除",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "整批原子性、空批次和版本冲突",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次深复制且不重复执行",
+          "passed": true
+        },
+        {
+          "id": "query",
+          "label": "组合筛选、稳定排序和分页",
+          "passed": true
+        },
+        {
+          "id": "stats",
+          "label": "统计与查询一致、零项和标签计数",
+          "passed": true
+        },
+        {
+          "id": "audit",
+          "label": "审计版本过滤与数据隔离",
+          "passed": true
+        },
+        {
+          "id": "persistence",
+          "label": "文件迁移、原子保存和失败保留",
+          "passed": true
+        },
+        {
+          "id": "cli_initial",
+          "label": "文件输入与完整CLI业务链路",
+          "passed": true
+        },
+        {
+          "id": "rollback_restore",
+          "label": "撤销创建删除修改并保持版本",
+          "passed": true
+        },
+        {
+          "id": "rollback_conflicts",
+          "label": "撤销顺序、全局冲突与幂等",
+          "passed": true
+        },
+        {
+          "id": "repeated_undo",
+          "label": "连续撤销不倒退无关工单版本",
+          "passed": true
+        },
+        {
+          "id": "cli_rollback",
+          "label": "撤销后的CLI、查询统计和审计",
+          "passed": true
+        },
+        {
+          "id": "tests_docs",
+          "label": "交付可运行测试与README",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "L1-v1",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 17,
+      "wall_seconds": 510.0390000343323,
+      "known_tokens": 456969,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "legacy",
+          "label": "保留旧函数和旧CLI",
+          "passed": true
+        },
+        {
+          "id": "migration_zero",
+          "label": "旧数组格式迁移与非法值",
+          "passed": true
+        },
+        {
+          "id": "migration_one",
+          "label": "字典格式、碰撞和迁移幂等",
+          "passed": true
+        },
+        {
+          "id": "schema",
+          "label": "规范数据与深复制",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览无副作用且与执行一致",
+          "passed": true
+        },
+        {
+          "id": "sequential",
+          "label": "多步依赖、创建更新分配删除",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "整批原子性、空批次和版本冲突",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次深复制且不重复执行",
+          "passed": true
+        },
+        {
+          "id": "query",
+          "label": "组合筛选、稳定排序和分页",
+          "passed": true
+        },
+        {
+          "id": "stats",
+          "label": "统计与查询一致、零项和标签计数",
+          "passed": true
+        },
+        {
+          "id": "audit",
+          "label": "审计版本过滤与数据隔离",
+          "passed": true
+        },
+        {
+          "id": "persistence",
+          "label": "文件迁移、原子保存和失败保留",
+          "passed": true
+        },
+        {
+          "id": "cli_initial",
+          "label": "文件输入与完整CLI业务链路",
+          "passed": true
+        },
+        {
+          "id": "rollback_restore",
+          "label": "撤销创建删除修改并保持版本",
+          "passed": true
+        },
+        {
+          "id": "rollback_conflicts",
+          "label": "撤销顺序、全局冲突与幂等",
+          "passed": true
+        },
+        {
+          "id": "repeated_undo",
+          "label": "连续撤销不倒退无关工单版本",
+          "passed": true
+        },
+        {
+          "id": "cli_rollback",
+          "label": "撤销后的CLI、查询统计和审计",
+          "passed": true
+        },
+        {
+          "id": "tests_docs",
+          "label": "交付可运行测试与README",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "L1-v1",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 22,
+      "wall_seconds": 536.010568857193,
+      "known_tokens": 513978,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "legacy",
+          "label": "保留旧函数和旧CLI",
+          "passed": true
+        },
+        {
+          "id": "migration_zero",
+          "label": "旧数组格式迁移与非法值",
+          "passed": true
+        },
+        {
+          "id": "migration_one",
+          "label": "字典格式、碰撞和迁移幂等",
+          "passed": true
+        },
+        {
+          "id": "schema",
+          "label": "规范数据与深复制",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览无副作用且与执行一致",
+          "passed": true
+        },
+        {
+          "id": "sequential",
+          "label": "多步依赖、创建更新分配删除",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "整批原子性、空批次和版本冲突",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次深复制且不重复执行",
+          "passed": true
+        },
+        {
+          "id": "query",
+          "label": "组合筛选、稳定排序和分页",
+          "passed": true
+        },
+        {
+          "id": "stats",
+          "label": "统计与查询一致、零项和标签计数",
+          "passed": true
+        },
+        {
+          "id": "audit",
+          "label": "审计版本过滤与数据隔离",
+          "passed": true
+        },
+        {
+          "id": "persistence",
+          "label": "文件迁移、原子保存和失败保留",
+          "passed": true
+        },
+        {
+          "id": "cli_initial",
+          "label": "文件输入与完整CLI业务链路",
+          "passed": true
+        },
+        {
+          "id": "rollback_restore",
+          "label": "撤销创建删除修改并保持版本",
+          "passed": true
+        },
+        {
+          "id": "rollback_conflicts",
+          "label": "撤销顺序、全局冲突与幂等",
+          "passed": true
+        },
+        {
+          "id": "repeated_undo",
+          "label": "连续撤销不倒退无关工单版本",
+          "passed": true
+        },
+        {
+          "id": "cli_rollback",
+          "label": "撤销后的CLI、查询统计和审计",
+          "passed": true
+        },
+        {
+          "id": "tests_docs",
+          "label": "交付可运行测试与README",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "L1-v1",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 21,
+      "wall_seconds": 631.392412185669,
+      "known_tokens": 510970,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "legacy",
+          "label": "保留旧函数和旧CLI",
+          "passed": true
+        },
+        {
+          "id": "migration_zero",
+          "label": "旧数组格式迁移与非法值",
+          "passed": true
+        },
+        {
+          "id": "migration_one",
+          "label": "字典格式、碰撞和迁移幂等",
+          "passed": true
+        },
+        {
+          "id": "schema",
+          "label": "规范数据与深复制",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览无副作用且与执行一致",
+          "passed": true
+        },
+        {
+          "id": "sequential",
+          "label": "多步依赖、创建更新分配删除",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "整批原子性、空批次和版本冲突",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次深复制且不重复执行",
+          "passed": true
+        },
+        {
+          "id": "query",
+          "label": "组合筛选、稳定排序和分页",
+          "passed": true
+        },
+        {
+          "id": "stats",
+          "label": "统计与查询一致、零项和标签计数",
+          "passed": true
+        },
+        {
+          "id": "audit",
+          "label": "审计版本过滤与数据隔离",
+          "passed": true
+        },
+        {
+          "id": "persistence",
+          "label": "文件迁移、原子保存和失败保留",
+          "passed": true
+        },
+        {
+          "id": "cli_initial",
+          "label": "文件输入与完整CLI业务链路",
+          "passed": true
+        },
+        {
+          "id": "rollback_restore",
+          "label": "撤销创建删除修改并保持版本",
+          "passed": true
+        },
+        {
+          "id": "rollback_conflicts",
+          "label": "撤销顺序、全局冲突与幂等",
+          "passed": true
+        },
+        {
+          "id": "repeated_undo",
+          "label": "连续撤销不倒退无关工单版本",
+          "passed": true
+        },
+        {
+          "id": "cli_rollback",
+          "label": "撤销后的CLI、查询统计和审计",
+          "passed": true
+        },
+        {
+          "id": "tests_docs",
+          "label": "交付可运行测试与README",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B1-v2",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 10,
+      "wall_seconds": 490.06028294563293,
+      "known_tokens": 146075,
+      "unknown_usage_requests": 1,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "新旧日志统一与输入隔离",
+          "passed": true
+        },
+        {
+          "id": "route",
+          "label": "负反馈有效且链路未接入的归因",
+          "passed": true
+        },
+        {
+          "id": "profile",
+          "label": "画像不可用与未知状态分别处理",
+          "passed": true
+        },
+        {
+          "id": "source",
+          "label": "广告商品优先路由不套推荐结论",
+          "passed": true
+        },
+        {
+          "id": "missing",
+          "label": "兜底日志不足不能确定过滤器原因",
+          "passed": true
+        },
+        {
+          "id": "timing",
+          "label": "反馈有效期边界和未来反馈排除",
+          "passed": true
+        },
+        {
+          "id": "relation",
+          "label": "商品类目不匹配与缺失不可混为正常",
+          "passed": true
+        },
+        {
+          "id": "signals",
+          "label": "不一致日志和规则违规分开",
+          "passed": true
+        },
+        {
+          "id": "request",
+          "label": "精确请求关联与无日志和歧义",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "重复ID和非规范类型拒绝",
+          "passed": true
+        },
+        {
+          "id": "batch_compare",
+          "label": "批量和前后版本逐项对应",
+          "passed": true
+        },
+        {
+          "id": "image",
+          "label": "图片反馈按商品款式而非类目过滤",
+          "passed": true
+        },
+        {
+          "id": "image_expiry",
+          "label": "图片反馈有效期和原类目规则兼容",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "诊断CLI文件输入保存与旧命令",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B1-v2",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 14,
+      "wall_seconds": 698.8439049720764,
+      "known_tokens": 396959,
+      "unknown_usage_requests": 1,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "新旧日志统一与输入隔离",
+          "passed": true
+        },
+        {
+          "id": "route",
+          "label": "负反馈有效且链路未接入的归因",
+          "passed": true
+        },
+        {
+          "id": "profile",
+          "label": "画像不可用与未知状态分别处理",
+          "passed": true
+        },
+        {
+          "id": "source",
+          "label": "广告商品优先路由不套推荐结论",
+          "passed": true
+        },
+        {
+          "id": "missing",
+          "label": "兜底日志不足不能确定过滤器原因",
+          "passed": true
+        },
+        {
+          "id": "timing",
+          "label": "反馈有效期边界和未来反馈排除",
+          "passed": true
+        },
+        {
+          "id": "relation",
+          "label": "商品类目不匹配与缺失不可混为正常",
+          "passed": true
+        },
+        {
+          "id": "signals",
+          "label": "不一致日志和规则违规分开",
+          "passed": true
+        },
+        {
+          "id": "request",
+          "label": "精确请求关联与无日志和歧义",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "重复ID和非规范类型拒绝",
+          "passed": true
+        },
+        {
+          "id": "batch_compare",
+          "label": "批量和前后版本逐项对应",
+          "passed": true
+        },
+        {
+          "id": "image",
+          "label": "图片反馈按商品款式而非类目过滤",
+          "passed": true
+        },
+        {
+          "id": "image_expiry",
+          "label": "图片反馈有效期和原类目规则兼容",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "诊断CLI文件输入保存与旧命令",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B1-v2",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 25,
+      "wall_seconds": 791.0041100978851,
+      "known_tokens": 750521,
+      "unknown_usage_requests": 1,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "新旧日志统一与输入隔离",
+          "passed": true
+        },
+        {
+          "id": "route",
+          "label": "负反馈有效且链路未接入的归因",
+          "passed": true
+        },
+        {
+          "id": "profile",
+          "label": "画像不可用与未知状态分别处理",
+          "passed": true
+        },
+        {
+          "id": "source",
+          "label": "广告商品优先路由不套推荐结论",
+          "passed": true
+        },
+        {
+          "id": "missing",
+          "label": "兜底日志不足不能确定过滤器原因",
+          "passed": true
+        },
+        {
+          "id": "timing",
+          "label": "反馈有效期边界和未来反馈排除",
+          "passed": true
+        },
+        {
+          "id": "relation",
+          "label": "商品类目不匹配与缺失不可混为正常",
+          "passed": true
+        },
+        {
+          "id": "signals",
+          "label": "不一致日志和规则违规分开",
+          "passed": true
+        },
+        {
+          "id": "request",
+          "label": "精确请求关联与无日志和歧义",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "重复ID和非规范类型拒绝",
+          "passed": true
+        },
+        {
+          "id": "batch_compare",
+          "label": "批量和前后版本逐项对应",
+          "passed": true
+        },
+        {
+          "id": "image",
+          "label": "图片反馈按商品款式而非类目过滤",
+          "passed": true
+        },
+        {
+          "id": "image_expiry",
+          "label": "图片反馈有效期和原类目规则兼容",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "诊断CLI文件输入保存与旧命令",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B1-v2",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 19,
+      "wall_seconds": 734.6334981918335,
+      "known_tokens": 395290,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "新旧日志统一与输入隔离",
+          "passed": true
+        },
+        {
+          "id": "route",
+          "label": "负反馈有效且链路未接入的归因",
+          "passed": true
+        },
+        {
+          "id": "profile",
+          "label": "画像不可用与未知状态分别处理",
+          "passed": true
+        },
+        {
+          "id": "source",
+          "label": "广告商品优先路由不套推荐结论",
+          "passed": true
+        },
+        {
+          "id": "missing",
+          "label": "兜底日志不足不能确定过滤器原因",
+          "passed": true
+        },
+        {
+          "id": "timing",
+          "label": "反馈有效期边界和未来反馈排除",
+          "passed": true
+        },
+        {
+          "id": "relation",
+          "label": "商品类目不匹配与缺失不可混为正常",
+          "passed": true
+        },
+        {
+          "id": "signals",
+          "label": "不一致日志和规则违规分开",
+          "passed": true
+        },
+        {
+          "id": "request",
+          "label": "精确请求关联与无日志和歧义",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "重复ID和非规范类型拒绝",
+          "passed": true
+        },
+        {
+          "id": "batch_compare",
+          "label": "批量和前后版本逐项对应",
+          "passed": true
+        },
+        {
+          "id": "image",
+          "label": "图片反馈按商品款式而非类目过滤",
+          "passed": true
+        },
+        {
+          "id": "image_expiry",
+          "label": "图片反馈有效期和原类目规则兼容",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "诊断CLI文件输入保存与旧命令",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B3-v2",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 10,
+      "wall_seconds": 387.86100792884827,
+      "known_tokens": 160073,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "多版本日志与重复事件去重",
+          "passed": true
+        },
+        {
+          "id": "aggregate",
+          "label": "总体改善但分群都下降",
+          "passed": true
+        },
+        {
+          "id": "weighted",
+          "label": "统一权重消除人群构成影响",
+          "passed": true
+        },
+        {
+          "id": "funnel",
+          "label": "漏斗分母与零分母规则",
+          "passed": true
+        },
+        {
+          "id": "excluded",
+          "label": "未分流和版本不匹配单独计数",
+          "passed": true
+        },
+        {
+          "id": "boundary",
+          "label": "分析窗口与分流窗口左闭右开",
+          "passed": true
+        },
+        {
+          "id": "overlap",
+          "label": "分流重叠和冲突重复事件拒绝",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "非法漏斗、单位与权重拒绝",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "输入和结果嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "user",
+          "label": "用户口径选择窗口内最后一次请求",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "用户最新请求同时间按事件ID决定",
+          "passed": true
+        },
+        {
+          "id": "compare",
+          "label": "新旧口径比较保留原有分析",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "分析CLI与标准化结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B3-v2",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 15,
+      "wall_seconds": 617.1941409111023,
+      "known_tokens": 435812,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "多版本日志与重复事件去重",
+          "passed": true
+        },
+        {
+          "id": "aggregate",
+          "label": "总体改善但分群都下降",
+          "passed": true
+        },
+        {
+          "id": "weighted",
+          "label": "统一权重消除人群构成影响",
+          "passed": true
+        },
+        {
+          "id": "funnel",
+          "label": "漏斗分母与零分母规则",
+          "passed": true
+        },
+        {
+          "id": "excluded",
+          "label": "未分流和版本不匹配单独计数",
+          "passed": true
+        },
+        {
+          "id": "boundary",
+          "label": "分析窗口与分流窗口左闭右开",
+          "passed": true
+        },
+        {
+          "id": "overlap",
+          "label": "分流重叠和冲突重复事件拒绝",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "非法漏斗、单位与权重拒绝",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "输入和结果嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "user",
+          "label": "用户口径选择窗口内最后一次请求",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "用户最新请求同时间按事件ID决定",
+          "passed": true
+        },
+        {
+          "id": "compare",
+          "label": "新旧口径比较保留原有分析",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "分析CLI与标准化结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B3-v2",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 23,
+      "wall_seconds": 715.951473236084,
+      "known_tokens": 728090,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "多版本日志与重复事件去重",
+          "passed": true
+        },
+        {
+          "id": "aggregate",
+          "label": "总体改善但分群都下降",
+          "passed": true
+        },
+        {
+          "id": "weighted",
+          "label": "统一权重消除人群构成影响",
+          "passed": true
+        },
+        {
+          "id": "funnel",
+          "label": "漏斗分母与零分母规则",
+          "passed": true
+        },
+        {
+          "id": "excluded",
+          "label": "未分流和版本不匹配单独计数",
+          "passed": true
+        },
+        {
+          "id": "boundary",
+          "label": "分析窗口与分流窗口左闭右开",
+          "passed": true
+        },
+        {
+          "id": "overlap",
+          "label": "分流重叠和冲突重复事件拒绝",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "非法漏斗、单位与权重拒绝",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "输入和结果嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "user",
+          "label": "用户口径选择窗口内最后一次请求",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "用户最新请求同时间按事件ID决定",
+          "passed": true
+        },
+        {
+          "id": "compare",
+          "label": "新旧口径比较保留原有分析",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "分析CLI与标准化结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B3-v2",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 20,
+      "wall_seconds": 688.1126048564911,
+      "known_tokens": 478298,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "normalize",
+          "label": "多版本日志与重复事件去重",
+          "passed": true
+        },
+        {
+          "id": "aggregate",
+          "label": "总体改善但分群都下降",
+          "passed": true
+        },
+        {
+          "id": "weighted",
+          "label": "统一权重消除人群构成影响",
+          "passed": true
+        },
+        {
+          "id": "funnel",
+          "label": "漏斗分母与零分母规则",
+          "passed": true
+        },
+        {
+          "id": "excluded",
+          "label": "未分流和版本不匹配单独计数",
+          "passed": true
+        },
+        {
+          "id": "boundary",
+          "label": "分析窗口与分流窗口左闭右开",
+          "passed": true
+        },
+        {
+          "id": "overlap",
+          "label": "分流重叠和冲突重复事件拒绝",
+          "passed": true
+        },
+        {
+          "id": "invalid",
+          "label": "非法漏斗、单位与权重拒绝",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "输入和结果嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "user",
+          "label": "用户口径选择窗口内最后一次请求",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "用户最新请求同时间按事件ID决定",
+          "passed": true
+        },
+        {
+          "id": "compare",
+          "label": "新旧口径比较保留原有分析",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "分析CLI与标准化结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B6-v2",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 11,
+      "wall_seconds": 475.0117218494415,
+      "known_tokens": 173441,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "plan",
+          "label": "依赖闭包与下线顺序及引用阻止",
+          "passed": true
+        },
+        {
+          "id": "cycle",
+          "label": "循环依赖与未知目标拒绝",
+          "passed": true
+        },
+        {
+          "id": "blocker",
+          "label": "在用业务及依赖特征禁止下线",
+          "passed": true
+        },
+        {
+          "id": "chain",
+          "label": "完整下线保留备份和状态一致",
+          "passed": true
+        },
+        {
+          "id": "phase",
+          "label": "清理核对顺序不能跳过",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "下线批次失败输入不变",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次忽略坏载荷且不重复日志",
+          "passed": true
+        },
+        {
+          "id": "revision",
+          "label": "版本冲突和非法动作拒绝",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览与提交变化一致不改输入",
+          "passed": true
+        },
+        {
+          "id": "attach",
+          "label": "新引用只允许仍然可用的特征",
+          "passed": true
+        },
+        {
+          "id": "rollback",
+          "label": "清理后恢复数据再接回业务",
+          "passed": true
+        },
+        {
+          "id": "rollback_atomic",
+          "label": "恢复后非法引用整批失败",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "验证和操作返回嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "计划和完整下线CLI及结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B6-v2",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 14,
+      "wall_seconds": 648.0779089927673,
+      "known_tokens": 416758,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "plan",
+          "label": "依赖闭包与下线顺序及引用阻止",
+          "passed": true
+        },
+        {
+          "id": "cycle",
+          "label": "循环依赖与未知目标拒绝",
+          "passed": true
+        },
+        {
+          "id": "blocker",
+          "label": "在用业务及依赖特征禁止下线",
+          "passed": true
+        },
+        {
+          "id": "chain",
+          "label": "完整下线保留备份和状态一致",
+          "passed": true
+        },
+        {
+          "id": "phase",
+          "label": "清理核对顺序不能跳过",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "下线批次失败输入不变",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次忽略坏载荷且不重复日志",
+          "passed": true
+        },
+        {
+          "id": "revision",
+          "label": "版本冲突和非法动作拒绝",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览与提交变化一致不改输入",
+          "passed": true
+        },
+        {
+          "id": "attach",
+          "label": "新引用只允许仍然可用的特征",
+          "passed": true
+        },
+        {
+          "id": "rollback",
+          "label": "清理后恢复数据再接回业务",
+          "passed": true
+        },
+        {
+          "id": "rollback_atomic",
+          "label": "恢复后非法引用整批失败",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "验证和操作返回嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "计划和完整下线CLI及结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B6-v2",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 28,
+      "wall_seconds": 737.6915500164032,
+      "known_tokens": 806702,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "plan",
+          "label": "依赖闭包与下线顺序及引用阻止",
+          "passed": true
+        },
+        {
+          "id": "cycle",
+          "label": "循环依赖与未知目标拒绝",
+          "passed": true
+        },
+        {
+          "id": "blocker",
+          "label": "在用业务及依赖特征禁止下线",
+          "passed": true
+        },
+        {
+          "id": "chain",
+          "label": "完整下线保留备份和状态一致",
+          "passed": true
+        },
+        {
+          "id": "phase",
+          "label": "清理核对顺序不能跳过",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "下线批次失败输入不变",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次忽略坏载荷且不重复日志",
+          "passed": true
+        },
+        {
+          "id": "revision",
+          "label": "版本冲突和非法动作拒绝",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览与提交变化一致不改输入",
+          "passed": true
+        },
+        {
+          "id": "attach",
+          "label": "新引用只允许仍然可用的特征",
+          "passed": true
+        },
+        {
+          "id": "rollback",
+          "label": "清理后恢复数据再接回业务",
+          "passed": true
+        },
+        {
+          "id": "rollback_atomic",
+          "label": "恢复后非法引用整批失败",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "验证和操作返回嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "计划和完整下线CLI及结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B6-v2",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 18,
+      "wall_seconds": 652.8206689357758,
+      "known_tokens": 384004,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "plan",
+          "label": "依赖闭包与下线顺序及引用阻止",
+          "passed": true
+        },
+        {
+          "id": "cycle",
+          "label": "循环依赖与未知目标拒绝",
+          "passed": true
+        },
+        {
+          "id": "blocker",
+          "label": "在用业务及依赖特征禁止下线",
+          "passed": true
+        },
+        {
+          "id": "chain",
+          "label": "完整下线保留备份和状态一致",
+          "passed": true
+        },
+        {
+          "id": "phase",
+          "label": "清理核对顺序不能跳过",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "下线批次失败输入不变",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "重复批次忽略坏载荷且不重复日志",
+          "passed": true
+        },
+        {
+          "id": "revision",
+          "label": "版本冲突和非法动作拒绝",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览与提交变化一致不改输入",
+          "passed": true
+        },
+        {
+          "id": "attach",
+          "label": "新引用只允许仍然可用的特征",
+          "passed": true
+        },
+        {
+          "id": "rollback",
+          "label": "清理后恢复数据再接回业务",
+          "passed": true
+        },
+        {
+          "id": "rollback_atomic",
+          "label": "恢复后非法引用整批失败",
+          "passed": true
+        },
+        {
+          "id": "isolation",
+          "label": "验证和操作返回嵌套对象隔离",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "计划和完整下线CLI及结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B11-v2",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 12,
+      "wall_seconds": 513.9832801818848,
+      "known_tokens": 225818,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "document",
+          "label": "OCR文档规范化和金额类型",
+          "passed": true
+        },
+        {
+          "id": "fingerprint",
+          "label": "同一小票指纹忽略OCR明细但区分票号",
+          "passed": true
+        },
+        {
+          "id": "reward",
+          "label": "审核后整数奖励和账目核对",
+          "passed": true
+        },
+        {
+          "id": "duplicate",
+          "label": "跨用户重复上传仅最早通过票获奖",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "同时间重复小票按ID决定归属",
+          "passed": true
+        },
+        {
+          "id": "correction",
+          "label": "待审核OCR纠错及版本递增",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "批次后半失败不产生奖励或记录",
+          "passed": true
+        },
+        {
+          "id": "conflict",
+          "label": "重复审核和旧版本禁止重复发奖",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "已提交请求回放忽略坏载荷",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览奖励与实际提交一致",
+          "passed": true
+        },
+        {
+          "id": "revise",
+          "label": "人工改判撤回奖励并转给重复票",
+          "passed": true
+        },
+        {
+          "id": "restore",
+          "label": "再次改判恢复最早票奖励且账目守恒",
+          "passed": true
+        },
+        {
+          "id": "tamper",
+          "label": "奖励投影和账目不一致拒绝核对",
+          "passed": true
+        },
+        {
+          "id": "large",
+          "label": "大整数金额不能丢精度",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "审核奖励CLI及核对结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B11-v2",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 16,
+      "wall_seconds": 738.9918229579926,
+      "known_tokens": 553193,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "document",
+          "label": "OCR文档规范化和金额类型",
+          "passed": true
+        },
+        {
+          "id": "fingerprint",
+          "label": "同一小票指纹忽略OCR明细但区分票号",
+          "passed": true
+        },
+        {
+          "id": "reward",
+          "label": "审核后整数奖励和账目核对",
+          "passed": true
+        },
+        {
+          "id": "duplicate",
+          "label": "跨用户重复上传仅最早通过票获奖",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "同时间重复小票按ID决定归属",
+          "passed": true
+        },
+        {
+          "id": "correction",
+          "label": "待审核OCR纠错及版本递增",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "批次后半失败不产生奖励或记录",
+          "passed": true
+        },
+        {
+          "id": "conflict",
+          "label": "重复审核和旧版本禁止重复发奖",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "已提交请求回放忽略坏载荷",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览奖励与实际提交一致",
+          "passed": true
+        },
+        {
+          "id": "revise",
+          "label": "人工改判撤回奖励并转给重复票",
+          "passed": true
+        },
+        {
+          "id": "restore",
+          "label": "再次改判恢复最早票奖励且账目守恒",
+          "passed": true
+        },
+        {
+          "id": "tamper",
+          "label": "奖励投影和账目不一致拒绝核对",
+          "passed": true
+        },
+        {
+          "id": "large",
+          "label": "大整数金额不能丢精度",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "审核奖励CLI及核对结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B11-v2",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 22,
+      "wall_seconds": 746.9975490570068,
+      "known_tokens": 606316,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "document",
+          "label": "OCR文档规范化和金额类型",
+          "passed": true
+        },
+        {
+          "id": "fingerprint",
+          "label": "同一小票指纹忽略OCR明细但区分票号",
+          "passed": true
+        },
+        {
+          "id": "reward",
+          "label": "审核后整数奖励和账目核对",
+          "passed": true
+        },
+        {
+          "id": "duplicate",
+          "label": "跨用户重复上传仅最早通过票获奖",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "同时间重复小票按ID决定归属",
+          "passed": true
+        },
+        {
+          "id": "correction",
+          "label": "待审核OCR纠错及版本递增",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "批次后半失败不产生奖励或记录",
+          "passed": true
+        },
+        {
+          "id": "conflict",
+          "label": "重复审核和旧版本禁止重复发奖",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "已提交请求回放忽略坏载荷",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览奖励与实际提交一致",
+          "passed": true
+        },
+        {
+          "id": "revise",
+          "label": "人工改判撤回奖励并转给重复票",
+          "passed": true
+        },
+        {
+          "id": "restore",
+          "label": "再次改判恢复最早票奖励且账目守恒",
+          "passed": true
+        },
+        {
+          "id": "tamper",
+          "label": "奖励投影和账目不一致拒绝核对",
+          "passed": true
+        },
+        {
+          "id": "large",
+          "label": "大整数金额不能丢精度",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "审核奖励CLI及核对结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "B11-v2",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 23,
+      "wall_seconds": 963.8065936565399,
+      "known_tokens": 702927,
+      "unknown_usage_requests": 0,
+      "quality_detail": "全部固定质量检查通过",
+      "variant": false,
+      "compatibility_passed": null,
+      "checks": [
+        {
+          "id": "document",
+          "label": "OCR文档规范化和金额类型",
+          "passed": true
+        },
+        {
+          "id": "fingerprint",
+          "label": "同一小票指纹忽略OCR明细但区分票号",
+          "passed": true
+        },
+        {
+          "id": "reward",
+          "label": "审核后整数奖励和账目核对",
+          "passed": true
+        },
+        {
+          "id": "duplicate",
+          "label": "跨用户重复上传仅最早通过票获奖",
+          "passed": true
+        },
+        {
+          "id": "tie",
+          "label": "同时间重复小票按ID决定归属",
+          "passed": true
+        },
+        {
+          "id": "correction",
+          "label": "待审核OCR纠错及版本递增",
+          "passed": true
+        },
+        {
+          "id": "atomic",
+          "label": "批次后半失败不产生奖励或记录",
+          "passed": true
+        },
+        {
+          "id": "conflict",
+          "label": "重复审核和旧版本禁止重复发奖",
+          "passed": true
+        },
+        {
+          "id": "replay",
+          "label": "已提交请求回放忽略坏载荷",
+          "passed": true
+        },
+        {
+          "id": "preview",
+          "label": "预览奖励与实际提交一致",
+          "passed": true
+        },
+        {
+          "id": "revise",
+          "label": "人工改判撤回奖励并转给重复票",
+          "passed": true
+        },
+        {
+          "id": "restore",
+          "label": "再次改判恢复最早票奖励且账目守恒",
+          "passed": true
+        },
+        {
+          "id": "tamper",
+          "label": "奖励投影和账目不一致拒绝核对",
+          "passed": true
+        },
+        {
+          "id": "large",
+          "label": "大整数金额不能丢精度",
+          "passed": true
+        },
+        {
+          "id": "cli",
+          "label": "审核奖励CLI及核对结果保存",
+          "passed": true
+        },
+        {
+          "id": "artifacts",
+          "label": "可复现分析结果与业务报告",
+          "passed": true
+        },
+        {
+          "id": "legacy",
+          "label": "旧接口兼容",
+          "passed": true
+        },
+        {
+          "id": "cli_invalid",
+          "label": "文件输入和失败输出保护",
+          "passed": true
+        },
+        {
+          "id": "atomic_save",
+          "label": "原子保存失败保留原文件",
+          "passed": true
+        },
+        {
+          "id": "docs_tests",
+          "label": "项目测试可运行和README说明",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-01",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 27,
+      "wall_seconds": 735.996395111084,
+      "known_tokens": 548906,
+      "unknown_usage_requests": 1,
+      "quality_detail": "week_index、start、打印页脚通过；原v1 begin缺失，旧客户端不兼容。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-fields-week-index-and-time-format",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-01",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 33,
+      "wall_seconds": 801.5116641521454,
+      "known_tokens": 1265859,
+      "unknown_usage_requests": 1,
+      "quality_detail": "week_index、start、打印页脚通过；原v1 begin缺失，旧客户端不兼容。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-fields-week-index-and-time-format",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-01",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 43,
+      "wall_seconds": 972.9274289608002,
+      "known_tokens": 1799059,
+      "unknown_usage_requests": 0,
+      "quality_detail": "week_index、start、打印页脚通过；原v1 begin缺失，旧客户端不兼容。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-fields-week-index-and-time-format",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-01",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 21,
+      "wall_seconds": 602.2018258571625,
+      "known_tokens": 534815,
+      "unknown_usage_requests": 0,
+      "quality_detail": "week_index、start、打印页脚通过；原v1 begin缺失，旧客户端不兼容。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-fields-week-index-and-time-format",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-02",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 36,
+      "wall_seconds": 1082.060630083084,
+      "known_tokens": 823439,
+      "unknown_usage_requests": 1,
+      "quality_detail": "小时窗口、默认明天、新日志和页脚通过；保留[xiaoman]兼容输出，原监控通过。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "hours-option-and-new-log-prefix",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-one-hour-empty-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-ten-hour-same-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-twenty-four-hour-cross-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "default-tomorrow-window-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "existing-ops-monitor",
+          "passed": true
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-02",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 35,
+      "wall_seconds": 878.5226857662201,
+      "known_tokens": 1402659,
+      "unknown_usage_requests": 1,
+      "quality_detail": "小时窗口、默认明天、新日志和页脚通过；原监控无法识别[QH]。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "hours-option-and-new-log-prefix",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-one-hour-empty-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-ten-hour-same-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-twenty-four-hour-cross-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "default-tomorrow-window-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "existing-ops-monitor",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-02",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 36,
+      "wall_seconds": 749.2953221797943,
+      "known_tokens": 1322277,
+      "unknown_usage_requests": 0,
+      "quality_detail": "小时窗口、默认明天、新日志和页脚通过；原监控无法识别[QH]。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "hours-option-and-new-log-prefix",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-one-hour-empty-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-ten-hour-same-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-twenty-four-hour-cross-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "default-tomorrow-window-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "existing-ops-monitor",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-02",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 32,
+      "wall_seconds": 865.4546239376068,
+      "known_tokens": 1144258,
+      "unknown_usage_requests": 0,
+      "quality_detail": "小时窗口、默认明天、新日志和页脚通过；原监控无法识别[QH]。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "hours-option-and-new-log-prefix",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-one-hour-empty-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-ten-hour-same-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "rolling-twenty-four-hour-cross-day-window",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "default-tomorrow-window-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "existing-ops-monitor",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-03",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 23,
+      "wall_seconds": 658.0227029323578,
+      "known_tokens": 432501,
+      "unknown_usage_requests": 0,
+      "quality_detail": "默认网页与CLI英文、工号和页脚通过；旧宏因中文列名缺失而失败。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "english-csv-fields-correct-staff-id",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-store-csv-macro",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-03",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 33,
+      "wall_seconds": 705.9640998840332,
+      "known_tokens": 1144400,
+      "unknown_usage_requests": 0,
+      "quality_detail": "默认网页与CLI英文、工号和页脚通过；旧宏因中文列名缺失而失败。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "english-csv-fields-correct-staff-id",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-store-csv-macro",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-03",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 50,
+      "wall_seconds": 1154.325973033905,
+      "known_tokens": 2129032,
+      "unknown_usage_requests": 0,
+      "quality_detail": "默认网页与CLI英文、工号和页脚通过；旧宏因中文列名缺失而失败。",
+      "variant": false,
+      "compatibility_passed": false,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "english-csv-fields-correct-staff-id",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-store-csv-macro",
+          "passed": false
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-03",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 32,
+      "wall_seconds": 812.5178618431091,
+      "known_tokens": 1262982,
+      "unknown_usage_requests": 0,
+      "quality_detail": "默认网页与CLI仍中文，旧宏通过；显式英文选项实测通过，工号正确。默认切换要求的解读有分歧，单列方案差异。",
+      "variant": true,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "print-footer",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "english-csv-fields-correct-staff-id",
+          "passed": false
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-store-csv-macro",
+          "passed": true
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-04",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 36,
+      "wall_seconds": 1632.9261729717255,
+      "known_tokens": 993121,
+      "unknown_usage_requests": 0,
+      "quality_detail": "员工提交、店长审批、pending→approved、对应日期/人员排班及API同步通过；start与begin兼容别名一致。原测试失败为旧精确字段集合断言。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "employee-web-request-persisted-pending",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "manager-web-approval-persisted",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-correct-schedule-day-person",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-exposed-in-api",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "leave-web-approval-schedule-api-workflow",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-start-field",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": true
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-04",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 41,
+      "wall_seconds": 1445.6384582519531,
+      "known_tokens": 2578671,
+      "unknown_usage_requests": 0,
+      "quality_detail": "员工提交、店长审批、pending→approved、对应日期/人员排班及API同步通过；start与begin兼容别名一致。原测试失败为旧精确字段集合断言。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "employee-web-request-persisted-pending",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "manager-web-approval-persisted",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-correct-schedule-day-person",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-exposed-in-api",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "leave-web-approval-schedule-api-workflow",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-start-field",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": true
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-04",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 53,
+      "wall_seconds": 1378.368313074112,
+      "known_tokens": 3644990,
+      "unknown_usage_requests": 0,
+      "quality_detail": "员工提交、店长审批、pending→approved、对应日期/人员排班及API同步通过；start与begin兼容别名一致。原测试失败为旧精确字段集合断言。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "employee-web-request-persisted-pending",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "manager-web-approval-persisted",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-correct-schedule-day-person",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-exposed-in-api",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "leave-web-approval-schedule-api-workflow",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-start-field",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": true
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-04",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 52,
+      "wall_seconds": 1409.0026450157166,
+      "known_tokens": 2954241,
+      "unknown_usage_requests": 3,
+      "quality_detail": "员工提交、店长审批、pending→approved、对应日期/人员排班及API同步通过；start与begin兼容别名一致。原测试失败为旧精确字段集合断言。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "existing-week-api-rows",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "employee-web-request-persisted-pending",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "manager-web-approval-persisted",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-correct-schedule-day-person",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "approved-leave-exposed-in-api",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "leave-web-approval-schedule-api-workflow",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "new-start-field",
+          "passed": true
+        },
+        {
+          "dimension": "compatibility",
+          "id": "old-v1-client-fields",
+          "passed": true
+        },
+        {
+          "dimension": "regression",
+          "id": "original-unmodified-tests",
+          "passed": false
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduling-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-05",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 8,
+      "wall_seconds": 311.1684410572052,
+      "known_tokens": 69981,
+      "unknown_usage_requests": 0,
+      "quality_detail": "原输入与补充输入通过：UTF-8/BOM/GBK、UTC时间、去重/同时间后行、字段优先级、排序、紧凑格式；未增加其他输出。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "provided-dirty-input",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "encoding-priority-dedup-sort-and-format",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-extra-delivery-files",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-05",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 7,
+      "wall_seconds": 290.12616896629333,
+      "known_tokens": 99822,
+      "unknown_usage_requests": 0,
+      "quality_detail": "原输入与补充输入通过：UTF-8/BOM/GBK、UTC时间、去重/同时间后行、字段优先级、排序、紧凑格式；未增加其他输出。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "provided-dirty-input",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "encoding-priority-dedup-sort-and-format",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-extra-delivery-files",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-05",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 15,
+      "wall_seconds": 418.57389211654663,
+      "known_tokens": 152222,
+      "unknown_usage_requests": 1,
+      "quality_detail": "原输入与补充输入通过：UTF-8/BOM/GBK、UTC时间、去重/同时间后行、字段优先级、排序、紧凑格式；未增加其他输出。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "provided-dirty-input",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "encoding-priority-dedup-sort-and-format",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-extra-delivery-files",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-05",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 9,
+      "wall_seconds": 154.33194303512573,
+      "known_tokens": 43859,
+      "unknown_usage_requests": 0,
+      "quality_detail": "原输入与补充输入通过：UTF-8/BOM/GBK、UTC时间、去重/同时间后行、字段优先级、排序、紧凑格式；未增加其他输出。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "provided-dirty-input",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "encoding-priority-dedup-sort-and-format",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-extra-delivery-files",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-06",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 6,
+      "wall_seconds": 65.15060091018677,
+      "known_tokens": 16700,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；说明基础经济舱不能改签，无违规承诺；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-06",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 7,
+      "wall_seconds": 84.43593907356262,
+      "known_tokens": 77302,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；说明基础经济舱不能改签，无违规承诺；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-06",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 6,
+      "wall_seconds": 44.44400095939636,
+      "known_tokens": 42519,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；说明基础经济舱不能改签，无违规承诺；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-06",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 8,
+      "wall_seconds": 47.22910690307617,
+      "known_tokens": 21939,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；说明基础经济舱不能改签，无违规承诺；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-07",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 5,
+      "wall_seconds": 39.05678367614746,
+      "known_tokens": 11229,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；拒绝取消、部分退款和voucher/gift card；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "addresses-refund-voucher-request",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-07",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 7,
+      "wall_seconds": 97.4474549293518,
+      "known_tokens": 81020,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；拒绝取消、部分退款和voucher/gift card；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "addresses-refund-voucher-request",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-07",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 7,
+      "wall_seconds": 53.93858623504639,
+      "known_tokens": 46489,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；拒绝取消、部分退款和voucher/gift card；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "addresses-refund-voucher-request",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-07",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 8,
+      "wall_seconds": 48.99116373062134,
+      "known_tokens": 20422,
+      "unknown_usage_requests": 0,
+      "quality_detail": "订单未改；拒绝取消、部分退款和voucher/gift card；完整回复复核通过。题目含预期动作提示。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "nonempty-user-reply",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "reservation-data-unchanged",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explains-policy-refusal",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "addresses-refund-voucher-request",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "policy-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-08",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 13,
+      "wall_seconds": 107.40435695648193,
+      "known_tokens": 47100,
+      "unknown_usage_requests": 0,
+      "quality_detail": "三轮功能、默认首尾/单次/不存在/Unicode、all位置与关键字、字符串空/多字符精确ValueError均通过；None/数字抛TypeError，单列为声明域之外的防御性诊断。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "default-first-and-last-including-boundaries",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "all-keyword-positional-and-default-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "exact-valueerror-message",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-test-delivery-files",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "function-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-08",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 16,
+      "wall_seconds": 135.41100192070007,
+      "known_tokens": 217244,
+      "unknown_usage_requests": 0,
+      "quality_detail": "三轮功能、默认首尾/单次/不存在/Unicode、all位置与关键字、字符串空/多字符精确ValueError均通过；None/数字抛TypeError，单列为声明域之外的防御性诊断。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "default-first-and-last-including-boundaries",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "all-keyword-positional-and-default-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "exact-valueerror-message",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-test-delivery-files",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "function-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-08",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 14,
+      "wall_seconds": 123.5487630367279,
+      "known_tokens": 104383,
+      "unknown_usage_requests": 0,
+      "quality_detail": "三轮功能、默认首尾/单次/不存在/Unicode、all位置与关键字、字符串空/多字符精确ValueError均通过；None/数字抛TypeError，单列为声明域之外的防御性诊断。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "default-first-and-last-including-boundaries",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "all-keyword-positional-and-default-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "exact-valueerror-message",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-test-delivery-files",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "function-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-08",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 13,
+      "wall_seconds": 99.0961000919342,
+      "known_tokens": 39382,
+      "unknown_usage_requests": 0,
+      "quality_detail": "三轮功能、默认首尾/单次/不存在/Unicode、all位置与关键字、字符串空/多字符精确ValueError均通过；None/数字抛TypeError，单列为声明域之外的防御性诊断。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "default-first-and-last-including-boundaries",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "all-keyword-positional-and-default-preserved",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "exact-valueerror-message",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-test-delivery-files",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "function-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-09",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 5,
+      "wall_seconds": 55.66647791862488,
+      "known_tokens": 11153,
+      "unknown_usage_requests": 0,
+      "quality_detail": "TaskScheduler及三个指定snake_case方法、可导入、无额外说明文件通过；题目未指定调度行为，未假定隐藏参数签名。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "class-and-method-naming",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "importable-and-instantiable",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "scheduler-behavior-unspecified",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduler-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-09",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 6,
+      "wall_seconds": 83.65190291404724,
+      "known_tokens": 62915,
+      "unknown_usage_requests": 0,
+      "quality_detail": "TaskScheduler及三个指定snake_case方法、可导入、无额外说明文件通过；题目未指定调度行为，未假定隐藏参数签名。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "class-and-method-naming",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "importable-and-instantiable",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "scheduler-behavior-unspecified",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduler-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-09",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 6,
+      "wall_seconds": 66.4852831363678,
+      "known_tokens": 37539,
+      "unknown_usage_requests": 0,
+      "quality_detail": "TaskScheduler及三个指定snake_case方法、可导入、无额外说明文件通过；题目未指定调度行为，未假定隐藏参数签名。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "class-and-method-naming",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "importable-and-instantiable",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "scheduler-behavior-unspecified",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduler-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-09",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 5,
+      "wall_seconds": 51.96154427528381,
+      "known_tokens": 11094,
+      "unknown_usage_requests": 0,
+      "quality_detail": "TaskScheduler及三个指定snake_case方法、可导入、无额外说明文件通过；题目未指定调度行为，未假定隐藏参数签名。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "class-and-method-naming",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "importable-and-instantiable",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "scheduler-behavior-unspecified",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "scheduler-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-10",
+      "group": "goalkeeper",
+      "normal_delivery": true,
+      "requests": 4,
+      "wall_seconds": 61.11220407485962,
+      "known_tokens": 8077,
+      "unknown_usage_requests": 0,
+      "quality_detail": "拒绝展开颐和园推荐，围绕武汉/黄鹤楼，包含热干面/过早，无代码或预订承诺；回复复核通过。SYSTEM为文件约束。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "yellow-crane-tower-and-required-food",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "breakfast-culture-if-discussed",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explicitly-scopes-out-summer-palace",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-code-delivery",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "tourism-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-10",
+      "group": "codex",
+      "normal_delivery": true,
+      "requests": 6,
+      "wall_seconds": 78.71340274810791,
+      "known_tokens": 63333,
+      "unknown_usage_requests": 0,
+      "quality_detail": "拒绝展开颐和园推荐，围绕武汉/黄鹤楼，包含热干面/过早，无代码或预订承诺；回复复核通过。SYSTEM为文件约束。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "yellow-crane-tower-and-required-food",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "breakfast-culture-if-discussed",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explicitly-scopes-out-summer-palace",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-code-delivery",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "tourism-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-10",
+      "group": "opencode",
+      "normal_delivery": true,
+      "requests": 6,
+      "wall_seconds": 96.40993309020996,
+      "known_tokens": 40315,
+      "unknown_usage_requests": 0,
+      "quality_detail": "拒绝展开颐和园推荐，围绕武汉/黄鹤楼，包含热干面/过早，无代码或预订承诺；回复复核通过。SYSTEM为文件约束。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "yellow-crane-tower-and-required-food",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "breakfast-culture-if-discussed",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explicitly-scopes-out-summer-palace",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-code-delivery",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "tourism-grading-execution",
+          "passed": true
+        }
+      ]
+    },
+    {
+      "task": "SB10-10",
+      "group": "pi",
+      "normal_delivery": true,
+      "requests": 4,
+      "wall_seconds": 59.345385789871216,
+      "known_tokens": 8556,
+      "unknown_usage_requests": 0,
+      "quality_detail": "拒绝展开颐和园推荐，围绕武汉/黄鹤楼，包含热干面/过早，无代码或预订承诺；回复复核通过。SYSTEM为文件约束。",
+      "variant": false,
+      "compatibility_passed": true,
+      "checks": [
+        {
+          "dimension": "requirements",
+          "id": "yellow-crane-tower-and-required-food",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "breakfast-culture-if-discussed",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "explicitly-scopes-out-summer-palace",
+          "passed": true
+        },
+        {
+          "dimension": "requirements",
+          "id": "no-code-delivery",
+          "passed": true
+        },
+        {
+          "dimension": "review",
+          "id": "semantic-review-needed",
+          "passed": true
+        },
+        {
+          "dimension": "infrastructure",
+          "id": "tourism-grading-execution",
+          "passed": true
+        }
+      ]
+    }
+  ],
+  "review_notes": [
+    "SB10-04: compatible begin alias accepted; raw original result retained locally.",
+    "SB10-08: reviewed against declared str domain; None/int remain extra diagnostics.",
+    "SB10-03 Pi: working English option plus original Chinese default; default mode interpretation differs.",
+    "SB10-06/07: supplied visible material includes expected-action hints.",
+    "SB10-10: SYSTEM.md is a file, not an API system message.",
+    "Unavailable original hidden graders: local disclosed checks and manual review only."
+  ]
+}

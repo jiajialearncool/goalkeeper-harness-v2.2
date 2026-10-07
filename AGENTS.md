@@ -1,0 +1,3 @@
+# GoalKeeper 2.2 contributor instructions
+
+Use the repository checkout as the only task and output root. Preserve path restrictions, protected checks, accounting and cleanup behavior. Do not read credentials or other runs through task tools. Run relevant offline tests before changing execution logic. Real model calls and paid evaluations require explicit user authorization. Do not modify frozen benchmark results or treat fixture/reference code as model-visible task inputs. Keep generated files under work/, runtime/, outputs/ or examples/generated/; never commit credentials or raw account metadata.

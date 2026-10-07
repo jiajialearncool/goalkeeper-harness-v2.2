@@ -1,0 +1,18 @@
+{
+  "model": "gpt-6.1-sol",
+  "effort": "xhigh",
+  "seconds_budget": 1800,
+  "token_budget": null,
+  "summary_enabled": true,
+  "compact_trigger": 48000,
+  "context_ceiling": 64000,
+  "keep_recent_tokens": 20000,
+  "summary_max_tokens": 2000,
+  "summary_input_tokens": 40000,
+  "summary_budget_fraction": null,
+  "summary_time_fraction": null,
+  "tool_result_tokens": 4096,
+  "output_forecast_tokens": 8192,
+  "delivery_save_seconds": 10,
+  "recovery_limit": 1
+}

@@ -1,0 +1,17 @@
+.venv/
+work/
+runtime/
+outputs/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.DS_Store
+.env*
+*.db*
+*.log
+evaluation/private/
+examples/generated/
+node_modules/
+*.pem
+*.key
