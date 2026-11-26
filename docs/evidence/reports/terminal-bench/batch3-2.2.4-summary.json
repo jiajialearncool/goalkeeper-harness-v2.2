@@ -1,0 +1,95 @@
+{
+  "benchmark": "Terminal-Bench 2.1",
+  "batch": 3,
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "official_source_commit": "7131e4375048a0e408a8fb404b5f499d726b695b",
+  "capability_profile": "native_defaults",
+  "native_capabilities_audit": {
+    "campaign": "private-runs/batch3-2.2.4-native-official-20261017-d",
+    "checked_runs": 20,
+    "native_profile_verified": true,
+    "tasks": [
+      "sqlite-db-truncate",
+      "large-scale-text-editing",
+      "regex-log",
+      "dna-assembly",
+      "query-optimize"
+    ],
+    "groups": [
+      "goalkeeper-2.2.4",
+      "package-harness",
+      "codex-native",
+      "pi-native"
+    ],
+    "findings": []
+  },
+  "tasks": [
+    "sqlite-db-truncate",
+    "large-scale-text-editing",
+    "regex-log",
+    "dna-assembly",
+    "query-optimize"
+  ],
+  "official_timeouts": {
+    "dna-assembly": {
+      "agent_seconds": 1800.0,
+      "verifier_seconds": 1800.0
+    },
+    "large-scale-text-editing": {
+      "agent_seconds": 1200.0,
+      "verifier_seconds": 1200.0
+    },
+    "query-optimize": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 1800.0
+    },
+    "regex-log": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    },
+    "sqlite-db-truncate": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    }
+  },
+  "summary": {
+    "goalkeeper-2.2.4": {
+      "passed": 4,
+      "total": 5,
+      "wall_seconds": 1136.6332233749854,
+      "tokens": 412601,
+      "model_calls": 54,
+      "usage_complete": true
+    },
+    "package-harness": {
+      "passed": 4,
+      "total": 5,
+      "wall_seconds": 1061.5558888319647,
+      "tokens": 324939,
+      "model_calls": 46,
+      "usage_complete": true
+    },
+    "codex-native": {
+      "passed": 3,
+      "total": 5,
+      "wall_seconds": 982.1004260409973,
+      "tokens": 668397,
+      "model_calls": 50,
+      "usage_complete": true
+    },
+    "pi-native": {
+      "passed": 4,
+      "total": 5,
+      "wall_seconds": 1005.5071864160127,
+      "tokens": 318300,
+      "model_calls": 51,
+      "usage_complete": true
+    }
+  },
+  "excluded_preflight": {
+    "task": "financial-document-processor",
+    "reason": "official solution timed out twice at its 1200-second agent limit on Apple Silicon/Rosetta",
+    "replacement": "sqlite-db-truncate"
+  }
+}

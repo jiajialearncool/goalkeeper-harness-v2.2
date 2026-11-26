@@ -1,0 +1,14 @@
+[
+  {
+    "source_file": "04_2.2方案设计_简洁循环和工作树隔离.md",
+    "sha256": "156c57bd31f0268f401b175dc28b1f0ce29b5ccc5a1c49e5f7d5c2e52a856489",
+    "public_excerpt_location": "docs/contribution.md",
+    "private_original_included": false
+  },
+  {
+    "source_file": "06_2.2长任务_L1优化和四道业务题.md",
+    "sha256": "a198f6b9915ea894b041b865f0cd8f63ec16a6fa5ba701d765092dc6cc343364",
+    "public_excerpt_location": "docs/contribution.md",
+    "private_original_included": false
+  }
+]

@@ -19,25 +19,41 @@ class StrictModel(BaseModel):
 
 class RunConfig(StrictModel):
     model: str = MODEL
-    effort: str = EFFORT
+    effort: str = "auto"
+    provider_id: str = "account"
+    task_profile: Literal["auto", "general", "short_qa", "research_report"] = "auto"
+    adaptive_effort: bool = False
+    transient_retries: int = Field(default=3, ge=0, le=3)
     seconds_budget: float = Field(default=1800, gt=0)
-    token_budget: int | None = Field(default=1_000_000, gt=0)
+    token_budget: int | None = Field(default=None, gt=0)
     summary_enabled: bool = True
     compact_trigger: int = Field(default=48_000, gt=0)
     context_ceiling: int = Field(default=64_000, gt=0)
     keep_recent_tokens: int = Field(default=20_000, gt=0)
     summary_max_tokens: int = Field(default=2_000, gt=0)
     summary_input_tokens: int = Field(default=40_000, gt=0)
-    summary_budget_fraction: float | None = Field(default=.1, gt=0, le=.5)
-    summary_time_fraction: float | None = Field(default=.15, gt=0, le=.5)
+    summary_budget_fraction: float | None = Field(default=None, gt=0, le=.5)
+    summary_time_fraction: float | None = Field(default=None, gt=0, le=.5)
     tool_result_tokens: int = Field(default=4_096, gt=0)
     output_forecast_tokens: int = Field(default=8_192, gt=0)
     delivery_save_seconds: float = Field(default=10, gt=0)
     recovery_limit: Literal[1] = 1
 
     def require_current_model(self) -> None:
-        if (self.model, self.effort) != (MODEL, EFFORT):
-            raise ValueError("本轮所有模型角色必须固定 gpt-6.1-sol / xhigh。")
+        from .runtime.provider_catalog import ACCOUNT_MODELS, is_account_provider
+        if is_account_provider(self.provider_id):
+            if self.model not in ACCOUNT_MODELS or self.effort not in {"auto", "low", "medium", "high", "xhigh"}:
+                raise ValueError("账号模型或推理强度不受支持。")
+        else:
+            from .runtime.provider_catalog import CATALOG
+            definition = CATALOG.get(self.provider_id, {})
+            allowed_efforts = definition.get("efforts", ["none"])
+            if (self.model not in definition.get("models", []) or self.effort not in allowed_efforts):
+                raise ValueError("模型配置不受支持。")
+
+    def require_evaluation_model(self):
+        if (self.model, self.effort, self.provider_id) != (MODEL, EFFORT, "account"):
+            raise ValueError("四组评测必须固定 gpt-6.1-sol / xhigh。")
 
     @model_validator(mode="after")
     def valid(self):
@@ -72,9 +88,10 @@ class Task(StrictModel):
     id: str
     objective: str
     constraints: list[str]
-    acceptance: list[str] = Field(min_length=1)
+    acceptance: list[str] = Field(default_factory=list)
     write_paths: list[str] = Field(min_length=1)
-    checks: list[Check] = Field(min_length=1)
+    checks: list[Check] = Field(default_factory=list)
+    delivery_mode: Literal["checked", "interactive"] = "checked"
     protected_paths: list[str] = Field(default_factory=list)
     feedback: Feedback | None = None
     user_turns: list[str] = Field(default_factory=list)
@@ -83,12 +100,16 @@ class Task(StrictModel):
     @model_serializer(mode="wrap")
     def serialize_compatible(self, handler):
         value = handler(self)
+        if self.delivery_mode == "checked":
+            value.pop("delivery_mode", None)
         if not self.user_turns:
             value.pop("user_turns", None)
         return value
 
     @model_validator(mode="after")
     def checks_unique(self):
+        if self.delivery_mode == "checked" and (not self.checks or not self.acceptance):
+            raise ValueError("规定验收任务必须提供检查和验收标准。")
         if self.feedback and self.user_turns:
             raise ValueError("业务反馈和顺序用户轮次不能混用。")
         if any(not text.strip() for text in self.user_turns):
@@ -128,6 +149,12 @@ class ModelRequest(StrictModel):
     config: RunConfig
     cache_key: str | None = None
 
+    @model_validator(mode="after")
+    def concrete_effort(self):
+        if self.config.effort == "auto":
+            self.config = self.config.model_copy(update={"effort": "xhigh"})
+        return self
+
 
 class ModelEvent(StrictModel):
     type: str
@@ -163,3 +190,37 @@ class State(StrictModel):
     protocol_reminders: int = 0
     sequence: int = 0
     events: list[dict[str, Any]] = Field(default_factory=list)
+
+    schema_version: int = 2
+    parent_run_id: str | None = None
+    baseline_files: dict[str, str] | None = None
+    question: str | None = None
+    queued_messages: list[dict] = Field(default_factory=list)
+    verification: list[dict] = Field(default_factory=list)
+    source_results: list[dict] = Field(default_factory=list)
+    waiting_since: float | None = None
+    remaining_seconds: float | None = None
+    checkpoint_seconds: float = 0
+    # Provenance is retained outside the bounded prose summary.
+    summary_sources: list[str] = Field(default_factory=list)
+    material_refs: list[str] = Field(default_factory=list)
+    report: dict | None = None
+
+    requirements: list[dict] = Field(default_factory=list)
+    progress: list[dict] = Field(default_factory=list)
+    waiting_requirement: dict | None = None
+
+    @model_validator(mode="before")
+    @classmethod
+    def legacy_state(cls, value):
+        if not isinstance(value, dict):
+            return value
+        import copy
+        value = copy.deepcopy(value)
+        cfg = value.get("config")
+        if isinstance(cfg, dict) and "task_profile" not in cfg:
+            cfg["task_profile"] = "auto"
+        task = value.get("task")
+        if isinstance(task, dict) and "delivery_mode" not in task:
+            task["delivery_mode"] = "checked" if task.get("checks") else "interactive"
+        return value

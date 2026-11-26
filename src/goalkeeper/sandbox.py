@@ -49,19 +49,29 @@ class Scope:
 
 
 class Seatbelt:
-    def __init__(self, scope: Scope, archive: Path | None = None):
+    def __init__(self, scope: Scope, archive: Path | None = None, internal_root: Path | None = None):
         self.scope = scope
         self.archive = archive
         self.root = normalized(scope.workspace)
-        self.temp = self.root / ".tmp"
-        self.home = self.root / ".home"
+        self.internal_root = normalized(internal_root) if internal_root is not None else self.root
+        if internal_root is not None:
+            self.internal_root.mkdir(parents=True, exist_ok=True)
+        self.temp = self.internal_root / ".tmp"
+        self.home = self.internal_root / ".home"
+        self.check_internal_directories()
         self.temp.mkdir(exist_ok=True)
         self.home.mkdir(exist_ok=True)
         self.on_spawn = None
         self.on_exit = None
         self.processes: set[asyncio.subprocess.Process] = set()
 
+    def check_internal_directories(self):
+        for path in (self.temp, self.home):
+            if path.is_symlink() or path.resolve() != path:
+                raise PermissionDenied("任务缓存目录不能通过符号链接指向其他目录。")
+
     def profile(self) -> str:
+        self.check_internal_directories()
         if sys.platform != "darwin" or not Path("/usr/bin/sandbox-exec").exists():
             raise PermissionDenied("第一版要求 macOS Seatbelt；禁止无沙箱回退。")
 
@@ -70,6 +80,8 @@ class Seatbelt:
 
         reads = [
             self.root,
+            self.home,
+            self.temp,
             Path("/System"),
             Path("/private/var/db/dyld"),
             Path("/usr/lib"),
@@ -113,6 +125,7 @@ class Seatbelt:
 (allow file-read* {read_rules} (literal "/") (literal "/dev/null") (literal "/dev/random") (literal "/dev/urandom"))
 (allow file-write* {" ".join(writes)})
 (deny file-write* (subpath {quoted(self.root / ".git")}))
+(deny file-write-unlink (literal {quoted(self.temp)}) (literal {quoted(self.home)}))
 {protected}
 (allow mach-lookup (global-name "com.apple.cfprefsd.daemon") (global-name "com.apple.cfprefsd.agent") (global-name "com.apple.logd"))
 {network}

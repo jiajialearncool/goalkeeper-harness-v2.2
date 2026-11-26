@@ -1,0 +1,63 @@
+{
+  "benchmark": "Terminal-Bench 2.1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "goalkeeper_version": "2.2.4",
+  "official_source_commit": "7131e4375048a0e408a8fb404b5f499d726b695b",
+  "official_timeouts": {
+    "configure-git-webserver": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    },
+    "db-wal-recovery": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    },
+    "modernize-scientific-stack": {
+      "agent_seconds": 600.0,
+      "verifier_seconds": 600.0
+    },
+    "pypi-server": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    },
+    "sqlite-with-gcov": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    }
+  },
+  "groups": {
+    "goalkeeper-2.2.4": {
+      "passed": 5,
+      "total": 5,
+      "seconds": 628.8824637499638,
+      "known_tokens": 266485,
+      "usage_complete": true,
+      "model_calls": 45
+    },
+    "package-harness": {
+      "passed": 5,
+      "total": 5,
+      "seconds": 505.032263666013,
+      "known_tokens": 287963,
+      "usage_complete": true,
+      "model_calls": 42
+    },
+    "codex-native": {
+      "passed": 4,
+      "total": 5,
+      "seconds": 1035.6528785830305,
+      "known_tokens": 1029102,
+      "usage_complete": false,
+      "model_calls": 63
+    },
+    "pi-native": {
+      "passed": 4,
+      "total": 5,
+      "seconds": 547.299950457993,
+      "known_tokens": 340165,
+      "usage_complete": true,
+      "model_calls": 45
+    }
+  }
+}

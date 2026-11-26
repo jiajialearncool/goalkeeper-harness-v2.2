@@ -1,0 +1,40 @@
+{
+  "original_sha256": "5fc9631164f1880c91c1cb42dbd7cdb26bd7dc1747c9877dd71ac3011503766f",
+  "figures": [
+    {
+      "number": 1,
+      "title": "GoalKeeper 执行总览（10 环节）",
+      "path": "docs/figures/figure-1.mmd",
+      "sha256": "c00d248debdd9879a5538ea0888c6edb103e52a5044362f4d9547ed31fe02a9f",
+      "body_unchanged": true
+    },
+    {
+      "number": 2,
+      "title": "Pi 的执行循环与会话扩展（9 环节）",
+      "path": "docs/figures/figure-2.mmd",
+      "sha256": "667d8722bbe416f1859f396d3343caad9b4ae636b6d812252b7165d899396638",
+      "body_unchanged": true
+    },
+    {
+      "number": 3,
+      "title": "GoalKeeper 连续执行与交付核对（对 Pi，9 环节）",
+      "path": "docs/figures/figure-3.mmd",
+      "sha256": "66edd7c1e5a84a460e59b5e76c55078cb60b2b7b827447631a104cf0d22de7e3",
+      "body_unchanged": true
+    },
+    {
+      "number": 4,
+      "title": "Codex CLI 执行循环与可选委派（9 环节）",
+      "path": "docs/figures/figure-4.mmd",
+      "sha256": "b3b79398fdde75f8fe67fdeef12f14e65fdf67ba73d3ee96c8d5a434c45f8b6b",
+      "body_unchanged": true
+    },
+    {
+      "number": 5,
+      "title": "GoalKeeper 可检查归档与单主 Agent 交付（对 Codex，9 环节）",
+      "path": "docs/figures/figure-5.mmd",
+      "sha256": "4c57a5e86cb46a2d32d6789a1831c009657d39ea4d14ec47e5a7d7a7055841d4",
+      "body_unchanged": true
+    }
+  ]
+}

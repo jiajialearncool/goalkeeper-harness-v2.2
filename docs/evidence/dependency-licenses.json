@@ -1,0 +1,413 @@
+[
+  {
+    "name": "annotated-doc",
+    "version": "0.0.5",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "anyio",
+    "version": "4.15.1",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "backports-tarfile",
+    "status": "not installed on current platform; conditional requirement"
+  },
+  {
+    "name": "beautifulsoup4",
+    "version": "4.15.0",
+    "license_declaration": "MIT License",
+    "license_files": [
+      "AUTHORS",
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "certifi",
+    "version": "2026.7.22",
+    "license_declaration": "MPL-2.0",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "license_declaration": "MIT-0",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "charset-normalizer",
+    "version": "3.5.2",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "click",
+    "version": "8.5.0",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "cryptography",
+    "version": "50.0.2",
+    "license_declaration": "Apache-2.0 OR BSD-3-Clause",
+    "license_files": [
+      "LICENSE",
+      "LICENSE.APACHE",
+      "LICENSE.BSD"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "et_xmlfile",
+    "version": "2.0.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENCE.python",
+      "LICENCE.rst",
+      "AUTHORS.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "fastapi",
+    "version": "0.142.2",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "httpcore",
+    "version": "1.0.9",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE.md"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "httpx",
+    "version": "0.28.1",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE.md"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "importlib-metadata",
+    "status": "not installed on current platform; conditional requirement"
+  },
+  {
+    "name": "jaraco.classes",
+    "version": "3.4.0",
+    "license_declaration": "License :: OSI Approved :: MIT License",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "jaraco.context",
+    "version": "6.1.2",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "jaraco.functools",
+    "version": "4.6.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "jeepney",
+    "status": "not installed on current platform; conditional requirement"
+  },
+  {
+    "name": "keyring",
+    "version": "25.7.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "lxml",
+    "version": "6.1.3",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE.txt",
+      "LICENSES.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "more-itertools",
+    "version": "11.1.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "openpyxl",
+    "version": "3.1.5",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENCE.rst"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "opentelemetry-api",
+    "version": "1.45.0",
+    "license_declaration": "Apache-2.0",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pillow",
+    "version": "10.4.0",
+    "license_declaration": "HPND",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pip",
+    "version": "26.2.1",
+    "license_declaration": "MIT",
+    "license_files": [
+      "AUTHORS.txt",
+      "LICENSE.txt",
+      "src/pip/_vendor/cachecontrol/LICENSE.txt",
+      "src/pip/_vendor/certifi/LICENSE",
+      "src/pip/_vendor/distlib/LICENSE.txt",
+      "src/pip/_vendor/distro/LICENSE",
+      "src/pip/_vendor/idna/LICENSE.md",
+      "src/pip/_vendor/msgpack/COPYING",
+      "src/pip/_vendor/packaging/LICENSE",
+      "src/pip/_vendor/packaging/LICENSE.APACHE",
+      "src/pip/_vendor/packaging/LICENSE.BSD",
+      "src/pip/_vendor/pkg_resources/LICENSE",
+      "src/pip/_vendor/platformdirs/LICENSE",
+      "src/pip/_vendor/pygments/LICENSE",
+      "src/pip/_vendor/pyproject_hooks/LICENSE",
+      "src/pip/_vendor/requests/LICENSE",
+      "src/pip/_vendor/resolvelib/LICENSE",
+      "src/pip/_vendor/rich/LICENSE",
+      "src/pip/_vendor/tomli/LICENSE",
+      "src/pip/_vendor/tomli_w/LICENSE",
+      "src/pip/_vendor/truststore/LICENSE",
+      "src/pip/_vendor/urllib3/LICENSE.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pycparser",
+    "version": "3.0",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pydantic",
+    "version": "2.13.5",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.46.5",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "PyJWT",
+    "version": "2.15.1",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE",
+      "AUTHORS.rst"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pypdf",
+    "version": "6.19.0",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "python-docx",
+    "version": "1.2.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "pywin32-ctypes",
+    "status": "not installed on current platform; conditional requirement"
+  },
+  {
+    "name": "regex",
+    "version": "2026.9.29",
+    "license_declaration": "Apache-2.0 AND CNRI-Python",
+    "license_files": [
+      "LICENSE.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "requests",
+    "version": "2.34.2",
+    "license_declaration": "Apache-2.0",
+    "license_files": [
+      "LICENSE",
+      "NOTICE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "secretstorage",
+    "status": "not installed on current platform; conditional requirement"
+  },
+  {
+    "name": "soupsieve",
+    "version": "2.10",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE.md"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "starlette",
+    "version": "1.7.0",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE.md"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "tiktoken",
+    "version": "0.14.0",
+    "license_declaration": "MIT License\n\nCopyright (c) 2022 OpenAI, Shantanu Jain\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "license_declaration": "PSF-2.0",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.4",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "urllib3",
+    "version": "2.8.0",
+    "license_declaration": "MIT",
+    "license_files": [
+      "LICENSE.txt"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.54.0",
+    "license_declaration": "BSD-3-Clause",
+    "license_files": [
+      "LICENSE.md"
+    ],
+    "source": "installed distribution metadata; runtime requirements only"
+  },
+  {
+    "name": "zipp",
+    "status": "not installed on current platform; conditional requirement"
+  }
+]

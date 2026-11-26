@@ -1,0 +1,22 @@
+flowchart TD
+  A["① 桌面 / CLI / GoalKeeper 评测入口"] --> B["② 共用创建接口启动唯一 Engine"]
+  B --> C["③ 接收最新要求，整理本轮上下文"]
+  C --> M{"④ 主循环<br/>调用模型，主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 按权限执行工具，记录结果"]
+  T -->|result 回中心| M
+  M -.->|达到压缩阈值| X["⑥ 归档旧片段，校验摘要，保留近期记录"]
+  X -.-> M
+  M -.->|只回复文字| ST["⑦ 提醒继续，第二次无工具调用则停止"]
+  ST -.-> M
+  M -->|申请交付| G{"⑧ 交付闸门<br/>核对当前要求、产物与适用检查"}
+  G -.->|退回并说明原因| M
+  G -->|接受交付| D["⑨ 返回结果，保留交付快照"]
+  D --> R["⑩ 保存运行状态、摘要、事件和归档引用"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,ST,D common
+  class X,G diff
+  class R record
+

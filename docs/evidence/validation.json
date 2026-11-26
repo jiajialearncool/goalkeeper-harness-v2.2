@@ -1,0 +1,97 @@
+{
+  "validation_date": "2026-11-25",
+  "runtime_source_version": "2.2.4",
+  "handoff_files_verified": 140,
+  "python_source_hashes_preserved": 68,
+  "dependency_install": "original requirements.txt; --require-hashes; isolated environment",
+  "python_version": "3.12.14",
+  "pytest": {
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": 17
+  },
+  "offline_demo": {
+    "passed": true,
+    "model": "ScriptedProvider; no real model requests",
+    "artifact_snapshot_read_only": true
+  },
+  "cli_help": true,
+  "minimal_task_preparation": true,
+  "figures": {
+    "all_five_rendered": true,
+    "renderer": "mermaid@11.12.2",
+    "page_errors": [],
+    "github_live_preview_checked": false,
+    "figures": [
+      {
+        "number": 1,
+        "renderer": "mermaid@11.12.2",
+        "source_unchanged": true,
+        "rendered": true,
+        "svg": "docs/figures/figure-1.svg",
+        "width": 1248.5,
+        "height": 1334
+      },
+      {
+        "number": 2,
+        "renderer": "mermaid@11.12.2",
+        "source_unchanged": true,
+        "rendered": true,
+        "svg": "docs/figures/figure-2.svg",
+        "width": 1120.65625,
+        "height": 854
+      },
+      {
+        "number": 3,
+        "renderer": "mermaid@11.12.2",
+        "source_unchanged": true,
+        "rendered": true,
+        "svg": "docs/figures/figure-3.svg",
+        "width": 945.625,
+        "height": 1206
+      },
+      {
+        "number": 4,
+        "renderer": "mermaid@11.12.2",
+        "source_unchanged": true,
+        "rendered": true,
+        "svg": "docs/figures/figure-4.svg",
+        "width": 1073.46875,
+        "height": 732.140625
+      },
+      {
+        "number": 5,
+        "renderer": "mermaid@11.12.2",
+        "source_unchanged": true,
+        "rendered": true,
+        "svg": "docs/figures/figure-5.svg",
+        "width": 945.625,
+        "height": 1206
+      }
+    ]
+  },
+  "live_github_preview_checked": false,
+  "full_historical_benchmarks_rerun": false,
+  "paid_model_requests": 0,
+  "remaining_publication_decisions": [
+    "project license choice; publication proceeds without adding a project license"
+  ],
+  "not_verified": [
+    "real-account model access",
+    "complete desktop rebuild",
+    "all historical benchmark reruns"
+  ],
+  "external_html_link_checks": {
+    "attempted": 20,
+    "http_200": 1,
+    "network_timeouts": 19,
+    "source_files_independently_read_at_pinned_commit": true
+  },
+  "publication_authorization": {
+    "date": "2026-11-26",
+    "repository": "jiajialearncool/goalkeeper-harness-v2.2",
+    "source": "explicit user instruction to push"
+  }
+}

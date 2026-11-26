@@ -1,0 +1,182 @@
+[
+  {
+    "product": "codex",
+    "repository": "openai/codex",
+    "tag": "rust-v0.159.0",
+    "commit": "687a119f0fcaace47e1f1abcc77cec6c813fd6da",
+    "scope": "version-pinned design check; not an assertion of all historical benchmark bytes",
+    "files": [
+      {
+        "path": "codex-rs/core/src/compact.rs",
+        "sha256": "715756709185c29499c328617a7907a7fc8ede9e89fe55b4dbddfe9c15e22080",
+        "bytes": 30403,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/compact.rs"
+      },
+      {
+        "path": "codex-rs/core/src/tools/handlers/multi_agents.rs",
+        "sha256": "1f1e4e6d4d075d3387e1b63237730c7e48326ced095fef30a548482ecebb3b04",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/tools/handlers/multi_agents.rs",
+        "bytes": 3594,
+        "status": "read"
+      },
+      {
+        "path": "codex-rs/core/src/hook_runtime.rs",
+        "sha256": "579a4cab9d82c9aaba7f925f2188fc14fa6940948e7f30ece02fdb24b20a2ae1",
+        "bytes": 50072,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/hook_runtime.rs"
+      },
+      {
+        "path": "codex-rs/core/src/session/turn.rs",
+        "sha256": "e4fab45a62e1cbafe39e18559cacb0aa4bd27af920663ef4d7eff96dacb2868c",
+        "bytes": 125476,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/session/turn.rs"
+      },
+      {
+        "path": "codex-rs/core/src/compact_remote_v2.rs",
+        "sha256": "f05e148d02f4ffdaa3249b4273976838b0f800d2b17ccb102d0d75edcc89a1cd",
+        "bytes": 48378,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/compact_remote_v2.rs"
+      },
+      {
+        "path": "codex-rs/protocol/src/openai_models.rs",
+        "sha256": "4c8b5cafd8c55db269f669e352321f787fcaf83785bce4476cb887abfce75dc6",
+        "bytes": 76868,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/protocol/src/openai_models.rs"
+      },
+      {
+        "path": "codex-rs/core/src/tools/handlers/multi_agents/spawn.rs",
+        "sha256": "f9ece5c8cd0194bc550a208dfc56d9f8c4bf5290d60fcbed61115d7f8246e15f",
+        "bytes": 8909,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/tools/handlers/multi_agents/spawn.rs"
+      },
+      {
+        "path": "codex-rs/core/src/rollout.rs",
+        "sha256": "1aa136709f80968ee68f4430efcffd6442a2837c34c7c7c78cc43bd83e738bf3",
+        "bytes": 1873,
+        "status": "read",
+        "source_url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/rollout.rs"
+      }
+    ],
+    "unread_paths": [
+      "codex-rs/core/src/codex.rs",
+      "codex-rs/core/src/compact_remote.rs"
+    ]
+  },
+  {
+    "product": "pi",
+    "repository": "earendil-works/pi",
+    "tag": "v0.73.1",
+    "commit": "781152fc24841dc54b22284514604048ebe5e2c9",
+    "scope": "version-pinned design check; not an assertion of all historical benchmark bytes",
+    "files": [
+      {
+        "path": "packages/agent/src/agent-loop.ts",
+        "sha256": "9c5294e2da36728f0ba680bf42d1dd509536de1ad3994b39f419e13eef1e3c18",
+        "bytes": 18802,
+        "status": "read",
+        "source_url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/agent/src/agent-loop.ts"
+      },
+      {
+        "path": "packages/coding-agent/src/core/agent-session.ts",
+        "sha256": "50aa7bd581c7e3c1ed93ca130181c55b2f28ae8f29a0c5486007bcc4b1d44d5e",
+        "bytes": 103876,
+        "status": "read",
+        "source_url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/agent-session.ts"
+      },
+      {
+        "path": "packages/coding-agent/src/core/compaction/compaction.ts",
+        "sha256": "c43c43465a143df0ed9668e078b5a107a1bc05664de04f5822e2cfb913ae09f2",
+        "bytes": 26016,
+        "status": "read",
+        "source_url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/compaction/compaction.ts"
+      },
+      {
+        "path": "packages/coding-agent/src/core/session-manager.ts",
+        "sha256": "24dcf490aa4901c007729af7db84f4da47735cf35f66dcd1749e44d2486579c9",
+        "bytes": 43006,
+        "status": "read",
+        "source_url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/session-manager.ts"
+      },
+      {
+        "path": "packages/coding-agent/README.md",
+        "sha256": "dbf2ee838b4f6475b900700429e60a1b0440914de38e37af0cee11d629e7c004",
+        "bytes": 27187,
+        "status": "read",
+        "source_url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/README.md"
+      }
+    ],
+    "unread_paths": []
+  },
+  {
+    "product": "opencode-v1",
+    "repository": "sst/opencode",
+    "tag": "v1.18.34",
+    "commit": "aec0b9a6d8898f68f923aaf08b7306d931fd9d76",
+    "scope": "version-pinned design check; not an assertion of all historical benchmark bytes",
+    "files": [
+      {
+        "path": "packages/opencode/src/session/prompt.ts",
+        "sha256": "f0c5bc64c0f0e966693d4a57f7ede1e9d6e188b396152f04b55303dc75b9b768",
+        "bytes": 64944,
+        "status": "read",
+        "source_url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/prompt.ts"
+      },
+      {
+        "path": "packages/opencode/src/session/processor.ts",
+        "sha256": "0b31e207beda56bd9a4b9b88c9e42d89a0651dd011773748c8e2938dfc3dcb74",
+        "source_url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/processor.ts",
+        "bytes": 27266,
+        "status": "read"
+      },
+      {
+        "path": "packages/opencode/src/session/compaction.ts",
+        "sha256": "8d478570a7e4ad32b746030d4f86a1c673949b1e2259bd716b3885d99283289a",
+        "bytes": 21236,
+        "status": "read",
+        "source_url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/compaction.ts"
+      },
+      {
+        "path": "packages/opencode/src/agent/agent.ts",
+        "sha256": "e781c571d584fa996200e320f14c2735e32968256b8db194391e7c06aed7433e",
+        "bytes": 16746,
+        "status": "read",
+        "source_url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/agent/agent.ts"
+      },
+      {
+        "path": "packages/opencode/src/tool/task.ts",
+        "sha256": "db09fa5868ad3ecfdd83aa2bb7243f85e9e2cd13d0b19fd6f307f7a337b2b36e",
+        "source_url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/tool/task.ts",
+        "bytes": 14200,
+        "status": "read"
+      },
+      {
+        "path": "packages/opencode/src/session/overflow.ts",
+        "sha256": "fa0d52e8a59b737e8129d6473f9f6416567cd765c6068f854e4ea0dd3d351d10",
+        "bytes": 1313,
+        "status": "read",
+        "source_url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/overflow.ts"
+      }
+    ],
+    "unread_paths": [
+      "packages/opencode/src/session/index.ts"
+    ]
+  },
+  {
+    "product": "opencode-v2",
+    "repository": "sst/opencode",
+    "tag": "v2.2.0",
+    "commit": "1097e2668b1e08ad63bdf0b1c4860b9bc01e420c",
+    "scope": "version-pinned design check; not an assertion of all historical benchmark bytes",
+    "files": [],
+    "unread_paths": [
+      "packages/opencode/src/session/compaction.ts",
+      "packages/opencode/src/agent/agent.ts"
+    ]
+  }
+]

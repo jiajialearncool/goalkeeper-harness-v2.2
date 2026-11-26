@@ -1,0 +1,20 @@
+[
+  {
+    "path": "tests/conftest.py",
+    "source": "development-worktree-test-copied-for-current-release-verification",
+    "sha256": "635c3308c940f76d0bf80965c2003be21fce9d65fc526074da21f2caa702d5a8",
+    "historical_2_2_4_test_provenance_verified": false
+  },
+  {
+    "path": "tests/test_unified_runtime.py",
+    "source": "development-worktree-test-copied-for-current-release-verification",
+    "sha256": "45ec0450b615298531c5b2755036956ef03db4f54d80bb1e465ed6a29019e87b",
+    "historical_2_2_4_test_provenance_verified": false
+  },
+  {
+    "path": "tests/test_publication_runtime.py",
+    "source": "new-publication-runtime-behavior-checks",
+    "sha256": "b118e6570fc0e0ab96b58479cfcc611accf0da4cb9c17d59d39bf61ec9ac1524",
+    "historical_2_2_4_test_provenance_verified": false
+  }
+]

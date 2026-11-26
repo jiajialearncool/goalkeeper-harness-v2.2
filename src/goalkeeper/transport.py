@@ -17,6 +17,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 
 from goalkeeper.auth import AuthBroker, AuthError, RESOURCE
 from .compat import subscription_payload
+from .models import EFFORT, MODEL
 from .storage import save_report
 from goalkeeper.models import utcnow
 from goalkeeper.secrets import redact
@@ -27,7 +28,8 @@ from .streaming import StagedStream, StreamFailure
 class MeteredTransport:
     def __init__(self, private: Path, report: Path, total_limit=None, per_run_limit=1_000_000,
                  http=None, auth=None, max_requests_per_run=None, transient_retries=0,
-                 resilient=False):
+                 resilient=False, listen_host="127.0.0.1", advertised_host=None,
+                 expected_model=MODEL, expected_effort=EFFORT):
         if type(transient_retries) is not int or transient_retries not in range(4):
             raise ValueError("每个请求的临时连接故障最多允许三次重试。")
         if (per_run_limit is not None and (type(per_run_limit) is not int or per_run_limit <= 0)
@@ -36,6 +38,18 @@ class MeteredTransport:
             raise ValueError("调用额度和请求次数必须是正整数。")
         self.transient_retries = transient_retries
         self.resilient = resilient
+        if not isinstance(listen_host, str) or not listen_host.strip():
+            raise ValueError("监听地址不能为空。")
+        if advertised_host is not None and (not isinstance(advertised_host, str) or not advertised_host.strip()):
+            raise ValueError("对外地址不能为空。")
+        if not isinstance(expected_model, str) or not expected_model.strip():
+            raise ValueError("转发层预期模型不能为空。")
+        if not isinstance(expected_effort, str) or not expected_effort.strip():
+            raise ValueError("转发层预期推理强度不能为空。")
+        self.listen_host = listen_host.strip()
+        self.advertised_host = (advertised_host or self.listen_host).strip()
+        self.expected_model = expected_model.strip()
+        self.expected_effort = expected_effort.strip()
         self.auth = auth or AuthBroker(private)
         self.http = http or httpx.AsyncClient(timeout=httpx.Timeout(360, connect=30), trust_env=True)
         self.report = report
@@ -74,7 +88,7 @@ class MeteredTransport:
         return {"DIAGNOSTIC_TRANSPORT_BASE": self.base(state.id), "LOCAL_ROUTE_TOKEN": self.route_keys[state.id]}
 
     def base(self, run_id):
-        return f"http://127.0.0.1:{self.port}/{self.nonce}/{run_id}/v1"
+        return f"http://{self.advertised_host}:{self.port}/{self.nonce}/{run_id}/v1"
 
     def known(self, run_id=None):
         return sum(c.get("tokens", 0) for c in self.records if run_id is None or c["run_id"] == run_id)
@@ -375,7 +389,11 @@ class MeteredTransport:
         if not self.admit(run_id):
             return self.problem("diagnostic_stopped", self.stopped_reason(run_id) or "attempt_token_threshold", 429)
         try:
-            payload = subscription_payload(await request.json())
+            payload = subscription_payload(
+                await request.json(),
+                expected_model=self.expected_model,
+                expected_effort=self.expected_effort,
+            )
         except ValueError as error:
             self.pause("configuration_error")
             return self.problem("configuration_mismatch", str(error), 400)
@@ -473,7 +491,7 @@ class MeteredTransport:
 
     async def start(self):
         sock = socket.socket()
-        sock.bind(("127.0.0.1", 0))
+        sock.bind((self.listen_host, 0))
         sock.listen(128)
         sock.setblocking(False)
         self.port = sock.getsockname()[1]

@@ -1,0 +1,105 @@
+{
+  "method": "curl HEAD with redirects; network timeouts are not invalid-link proof",
+  "results": [
+    {
+      "url": "https://github.com/SWE-agent/mini-swe-agent",
+      "result": "000 https://github.com/SWE-agent/mini-swe-agent",
+      "error": "curl: (28) Operation timed out after 20010 milliseconds with 0 bytes received"
+    },
+    {
+      "url": "https://github.com/earendil-works/pi",
+      "result": "200 https://github.com/earendil-works/pi",
+      "error": null
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/agent/src/agent-loop.ts",
+      "result": "000 https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/agent/src/agent-loop.ts",
+      "error": "curl: (28) Operation timed out after 20011 milliseconds with 0 bytes received"
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/README.md",
+      "result": "000 https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/README.md",
+      "error": "curl: (28) Operation timed out after 20010 milliseconds with 0 bytes received"
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/compaction/compaction.ts",
+      "result": "000 https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/compaction/compaction.ts",
+      "error": "curl: (28) SSL connection timeout"
+    },
+    {
+      "url": "https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/session-manager.ts",
+      "result": "000 https://github.com/earendil-works/pi/blob/781152fc24841dc54b22284514604048ebe5e2c9/packages/coding-agent/src/core/session-manager.ts",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5003 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/harbor-framework/harbor",
+      "result": "000 https://github.com/harbor-framework/harbor",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5010 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/langchain-ai/deepagents",
+      "result": "000 https://github.com/langchain-ai/deepagents",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5006 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/compact.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/compact.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5009 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/compact_remote_v2.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/compact_remote_v2.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5013 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/hook_runtime.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/hook_runtime.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5013 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/rollout.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/rollout.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5010 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/session/turn.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/session/turn.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5011 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/tools/handlers/multi_agents/spawn.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/core/src/tools/handlers/multi_agents/spawn.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5009 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/protocol/src/openai_models.rs",
+      "result": "000 https://github.com/openai/codex/blob/687a119f0fcaace47e1f1abcc77cec6c813fd6da/codex-rs/protocol/src/openai_models.rs",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5002 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/agent/agent.ts",
+      "result": "000 https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/agent/agent.ts",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5008 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/compaction.ts",
+      "result": "000 https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/compaction.ts",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5011 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/overflow.ts",
+      "result": "000 https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/overflow.ts",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5010 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/prompt.ts",
+      "result": "000 https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/session/prompt.ts",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5006 ms: Timeout was reached"
+    },
+    {
+      "url": "https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/tool/task.ts",
+      "result": "000 https://github.com/sst/opencode/blob/aec0b9a6d8898f68f923aaf08b7306d931fd9d76/packages/opencode/src/tool/task.ts",
+      "error": "curl: (28) Failed to connect to github.com port 443 after 5006 ms: Timeout was reached"
+    }
+  ]
+}

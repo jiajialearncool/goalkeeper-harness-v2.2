@@ -1,6 +1,6 @@
 {
   "model": "gpt-6.1-sol",
-  "effort": "xhigh",
+  "effort": "auto",
   "seconds_budget": 1800,
   "token_budget": null,
   "summary_enabled": true,
@@ -14,5 +14,6 @@
   "tool_result_tokens": 4096,
   "output_forecast_tokens": 8192,
   "delivery_save_seconds": 10,
-  "recovery_limit": 1
+  "recovery_limit": 1,
+  "task_profile": "auto"
 }

@@ -1,0 +1,89 @@
+{
+  "policy": "Reports only; private absolute paths replaced; no raw runs or hidden graders.",
+  "files": [
+    {
+      "path": "docs/evidence/reports/historical-16/benchmark-report.md",
+      "source_sha256": "ae7655bfd8a446fd77258855d3b76a9b7ac79b564e386dde3bf121db74711fb1",
+      "published_sha256": "ed0e8f4452eb9b74669b3cf6748a539e96cf7af96402531b1f8c6821304cf704",
+      "sanitized": true,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/historical-16/benchmark-results.json",
+      "source_sha256": "06e99a5ea6b5ca6a936d233440ec2a6eb4b90356a20cab37b7f8aa69a1aaeb37",
+      "published_sha256": "06e99a5ea6b5ca6a936d233440ec2a6eb4b90356a20cab37b7f8aa69a1aaeb37",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch1-2.2.2-report.md",
+      "source_sha256": "d4e0cf61535859eab88c8875f92144e3df4cd8e99829cd48b8107268497f3163",
+      "published_sha256": "d4e0cf61535859eab88c8875f92144e3df4cd8e99829cd48b8107268497f3163",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch2-2.2.4-report.md",
+      "source_sha256": "7e3e55785f997c6600cc016c702b531f0e8a7e9188845c7176646374204cfed3",
+      "published_sha256": "7e3e55785f997c6600cc016c702b531f0e8a7e9188845c7176646374204cfed3",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch2-2.2.4-summary.json",
+      "source_sha256": "f8c7f469bd51bbc4036ca09846a2ea7fb9e2455a73e60bb152232bfca8a3d3db",
+      "published_sha256": "f8c7f469bd51bbc4036ca09846a2ea7fb9e2455a73e60bb152232bfca8a3d3db",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch3-2.2.4-report.md",
+      "source_sha256": "fcca67cf560e7a31caa68da3daae1472eb3d888e098b610376e561d3a980cd6e",
+      "published_sha256": "fcca67cf560e7a31caa68da3daae1472eb3d888e098b610376e561d3a980cd6e",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch3-2.2.4-summary.json",
+      "source_sha256": "24a1df3945c5c9fe7e8575ba1dabc784c56cf9d00c5020e829dc514479dbf116",
+      "published_sha256": "6cf928b6c82c433ceb8c5013130962faa8356e43c8ada5369e86342379e26b4b",
+      "sanitized": true,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch4-2.2.4-report.md",
+      "source_sha256": "3a2ee17b858730436ae66f1e270967456dda9db1ede4eb75e127f7b7b2604e91",
+      "published_sha256": "3a2ee17b858730436ae66f1e270967456dda9db1ede4eb75e127f7b7b2604e91",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch4-2.2.4-summary.json",
+      "source_sha256": "37e60b9649cb0d49ce1f575b2b446fcc26f1cd693e60abe4db9593b985fec413",
+      "published_sha256": "d89e28c3a9b838dba5e59d41d264ddcd0b93517c39f8d7f57e0e274e70cc6a4b",
+      "sanitized": true,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch5-2.2.4-comparison-report.md",
+      "source_sha256": "92f4d3c27407afd6d323cf96e8b28c02b8f135f8f8c40426924b10d5098b5842",
+      "published_sha256": "e6011fa57aa8a2790d77ab28a749d595da99f1d0ef24b7c38716e6cc1c6090d1",
+      "sanitized": true,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/version/2.2.4-分阶段优化与回归记录.md",
+      "source_sha256": "69366dfe8eda3ec5e5bae6b44e2538042e682fbd18fd47e62b433721c54adab5",
+      "published_sha256": "69366dfe8eda3ec5e5bae6b44e2538042e682fbd18fd47e62b433721c54adab5",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    },
+    {
+      "path": "docs/evidence/reports/version/terminal-bench-2.1-version-ledger.md",
+      "source_sha256": "acdb8caa927fc5c750e7e6d2a908251ceeba30c61f67d271e2c8d10b9441aa5a",
+      "published_sha256": "acdb8caa927fc5c750e7e6d2a908251ceeba30c61f67d271e2c8d10b9441aa5a",
+      "sanitized": false,
+      "transformations": "private absolute paths replaced; unavailable publication.json link rendered as plain text"
+    }
+  ]
+}

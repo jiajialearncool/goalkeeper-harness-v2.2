@@ -1,0 +1,676 @@
+{
+  "version": "2.2.4",
+  "candidate_date": "2026-11-25",
+  "source_python_count": 68,
+  "file_count_excluding_this_manifest": 131,
+  "exclusions": [
+    "work/",
+    "runtime/",
+    "environment/",
+    "review/",
+    "tooling/",
+    "private transcripts",
+    "credentials",
+    "hidden graders",
+    "vendor bundles"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 194,
+      "sha256": "4cdc4990397a0102f474ab06d65c7507c0a53fea646f6e91deb22e4268a60a6f"
+    },
+    {
+      "path": "README.md",
+      "bytes": 11094,
+      "sha256": "6f1dc3efc52bf6a1cfacb17c66b87ef22e99edaae83b03f93f7665b018237e5b"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1817,
+      "sha256": "62d24c9d150b297edae4f59d3849c0e54462275276dfa33ef9261e00ff512694"
+    },
+    {
+      "path": "configs/default.json",
+      "bytes": 488,
+      "sha256": "34ae88d15f26995c007d3e2a46f768dbc7ce0a26e4736e95c46268bc009420b0"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 10088,
+      "sha256": "1faeb68175164df973571efc385992507d15d3b480c4f81c4f6802998c505aa9"
+    },
+    {
+      "path": "docs/assets/offline-demo.png",
+      "bytes": 202265,
+      "sha256": "a829ce24c020650b5deda4bb5463b95da96e2d83f148b3c639f6a47fcd550650"
+    },
+    {
+      "path": "docs/cases.md",
+      "bytes": 2988,
+      "sha256": "c4a28b038edd29c78ef1c7f3860833e0caefd1c39beb8f5a2063276878d8a585"
+    },
+    {
+      "path": "docs/comparison.md",
+      "bytes": 22216,
+      "sha256": "45fcd8bbda884bc9292998423ca486b5bbd97cda7512e8316c59ed6cf3e2f66d"
+    },
+    {
+      "path": "docs/contribution.md",
+      "bytes": 2803,
+      "sha256": "84f6b59cfd7f0b84e9447ac903b65f56b0dbc2823bbc94f1673e097682f40064"
+    },
+    {
+      "path": "docs/evaluation/historical-16.md",
+      "bytes": 8354,
+      "sha256": "0c2086da4fc6a5a8cc3c0ddcf281893bb73ff9a3d0b9485c7f09be6e42217c77"
+    },
+    {
+      "path": "docs/evaluation/terminal-bench.md",
+      "bytes": 12888,
+      "sha256": "621fe06466b53515059bab5119e2e9067b669c4dc9d83d8cd13320571ebba240"
+    },
+    {
+      "path": "docs/evidence/competitor-evidence.json",
+      "bytes": 8172,
+      "sha256": "7de1458cd3454e0cd44470943775e00be3d4641dd21f969de95d94b7fef4e690"
+    },
+    {
+      "path": "docs/evidence/decision-source-hashes.json",
+      "bytes": 516,
+      "sha256": "a09b92a531e97c57a8acac6752be8e039366fee2b99e1eba77b86902cefb16a2"
+    },
+    {
+      "path": "docs/evidence/dependency-licenses.json",
+      "bytes": 11614,
+      "sha256": "f7fe3374ed93693bb357d171471deaf6cac7caebf5f93b0d417e5f7895988f8f"
+    },
+    {
+      "path": "docs/evidence/evaluation-batches.json",
+      "bytes": 694,
+      "sha256": "9ec8e54c6d5cb8502eee9c58050741834bba19918d3973665b01e23b2b4b93b9"
+    },
+    {
+      "path": "docs/evidence/external-links.json",
+      "bytes": 7189,
+      "sha256": "328cbf45f1052d7bea65135f87c647129472a679f7b492fa1b80a95bd7489fdc"
+    },
+    {
+      "path": "docs/evidence/figures-manifest.json",
+      "bytes": 1417,
+      "sha256": "fa4c8d929f6c50f8c1e895124268e2fb2017e6fc626e56eede396222e4c2adfd"
+    },
+    {
+      "path": "docs/evidence/figures-render.json",
+      "bytes": 1215,
+      "sha256": "94ffc7beef797c62b49293ff43016f663916a58f0fa1cb2131b1ba4f9787168b"
+    },
+    {
+      "path": "docs/evidence/offline-demo.json",
+      "bytes": 2758,
+      "sha256": "201e9e770ca7759c78b0a0dc68cedbae45709e4c37130031b7d4fdcccbe9b90b"
+    },
+    {
+      "path": "docs/evidence/publication-check.json",
+      "bytes": 620,
+      "sha256": "bbe122cae6e109c97aa6f7ce9512d70cf2fa6a5764fbe81e0f3646eda295a17f"
+    },
+    {
+      "path": "docs/evidence/report-manifest.json",
+      "bytes": 5157,
+      "sha256": "70240775a923bc3eaafed04133f1a7da296bec0b17c60d3403f209923e2a505a"
+    },
+    {
+      "path": "docs/evidence/reports/historical-16/benchmark-report.md",
+      "bytes": 17746,
+      "sha256": "ed0e8f4452eb9b74669b3cf6748a539e96cf7af96402531b1f8c6821304cf704"
+    },
+    {
+      "path": "docs/evidence/reports/historical-16/benchmark-results.json",
+      "bytes": 121144,
+      "sha256": "06e99a5ea6b5ca6a936d233440ec2a6eb4b90356a20cab37b7f8aa69a1aaeb37"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch1-2.2.2-report.md",
+      "bytes": 3537,
+      "sha256": "d4e0cf61535859eab88c8875f92144e3df4cd8e99829cd48b8107268497f3163"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch2-2.2.4-report.md",
+      "bytes": 2241,
+      "sha256": "7e3e55785f997c6600cc016c702b531f0e8a7e9188845c7176646374204cfed3"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch2-2.2.4-summary.json",
+      "bytes": 1485,
+      "sha256": "f8c7f469bd51bbc4036ca09846a2ea7fb9e2455a73e60bb152232bfca8a3d3db"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch3-2.2.4-report.md",
+      "bytes": 3518,
+      "sha256": "fcca67cf560e7a31caa68da3daae1472eb3d888e098b610376e561d3a980cd6e"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch3-2.2.4-summary.json",
+      "bytes": 2307,
+      "sha256": "6cf928b6c82c433ceb8c5013130962faa8356e43c8ada5369e86342379e26b4b"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch4-2.2.4-report.md",
+      "bytes": 3492,
+      "sha256": "3a2ee17b858730436ae66f1e270967456dda9db1ede4eb75e127f7b7b2604e91"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch4-2.2.4-summary.json",
+      "bytes": 2163,
+      "sha256": "d89e28c3a9b838dba5e59d41d264ddcd0b93517c39f8d7f57e0e274e70cc6a4b"
+    },
+    {
+      "path": "docs/evidence/reports/terminal-bench/batch5-2.2.4-comparison-report.md",
+      "bytes": 3023,
+      "sha256": "e6011fa57aa8a2790d77ab28a749d595da99f1d0ef24b7c38716e6cc1c6090d1"
+    },
+    {
+      "path": "docs/evidence/reports/version/2.2.4-分阶段优化与回归记录.md",
+      "bytes": 5164,
+      "sha256": "69366dfe8eda3ec5e5bae6b44e2538042e682fbd18fd47e62b433721c54adab5"
+    },
+    {
+      "path": "docs/evidence/reports/version/terminal-bench-2.1-version-ledger.md",
+      "bytes": 13754,
+      "sha256": "acdb8caa927fc5c750e7e6d2a908251ceeba30c61f67d271e2c8d10b9441aa5a"
+    },
+    {
+      "path": "docs/evidence/source-manifest.json",
+      "bytes": 16039,
+      "sha256": "70f64c74514ee0fdc81f5edf4934bbdfec6f869ec03af2ae3f5386d72a78fb2f"
+    },
+    {
+      "path": "docs/evidence/validation.json",
+      "bytes": 2621,
+      "sha256": "3dbbe12d5bc9bafe5dc2896d2600d27b83d8e50d738aab57aea4cd880755e64f"
+    },
+    {
+      "path": "docs/evidence/verification-test-provenance.json",
+      "bytes": 791,
+      "sha256": "189c79ffdc4d2429b3127c928a8d3c3ef59ce45c3ce0041593d2232be2a89bd4"
+    },
+    {
+      "path": "docs/evidence-index.md",
+      "bytes": 3549,
+      "sha256": "5c05778508aaf80a3ee8317ed03177335fd62e455d80392140519a2317affb15"
+    },
+    {
+      "path": "docs/figures/figure-1.mmd",
+      "bytes": 1094,
+      "sha256": "c00d248debdd9879a5538ea0888c6edb103e52a5044362f4d9547ed31fe02a9f"
+    },
+    {
+      "path": "docs/figures/figure-1.svg",
+      "bytes": 25711,
+      "sha256": "b790d45399a2bac4bc27be3110aca7ab929260562b0d56c34257d35969446c0d"
+    },
+    {
+      "path": "docs/figures/figure-2.mmd",
+      "bytes": 905,
+      "sha256": "667d8722bbe416f1859f396d3343caad9b4ae636b6d812252b7165d899396638"
+    },
+    {
+      "path": "docs/figures/figure-2.svg",
+      "bytes": 23343,
+      "sha256": "6e10740208c9324c0df1e1bb63f0ef6aa0266f6dd549259ba6c2f9ee8b2e022d"
+    },
+    {
+      "path": "docs/figures/figure-3.mmd",
+      "bytes": 1051,
+      "sha256": "66edd7c1e5a84a460e59b5e76c55078cb60b2b7b827447631a104cf0d22de7e3"
+    },
+    {
+      "path": "docs/figures/figure-3.svg",
+      "bytes": 23415,
+      "sha256": "5dc6099d15fb4841ec652e72dcef9ff319953af747f1377727f6fcc4cb0f35bd"
+    },
+    {
+      "path": "docs/figures/figure-4.mmd",
+      "bytes": 879,
+      "sha256": "b3b79398fdde75f8fe67fdeef12f14e65fdf67ba73d3ee96c8d5a434c45f8b6b"
+    },
+    {
+      "path": "docs/figures/figure-4.svg",
+      "bytes": 23384,
+      "sha256": "71bcaa95267f1f901896d39ad10c8c86ed04ede83642e7b9f91c04329e801db7"
+    },
+    {
+      "path": "docs/figures/figure-5.mmd",
+      "bytes": 1056,
+      "sha256": "4c57a5e86cb46a2d32d6789a1831c009657d39ea4d14ec47e5a7d7a7055841d4"
+    },
+    {
+      "path": "docs/figures/figure-5.svg",
+      "bytes": 23421,
+      "sha256": "32ba46e306bab65cad696eb8cd09d7c4bdc676b489041aa365eea66cee60c378"
+    },
+    {
+      "path": "docs/figures/gpt_figures_final.mmd",
+      "bytes": 5416,
+      "sha256": "5fc9631164f1880c91c1cb42dbd7cdb26bd7dc1747c9877dd71ac3011503766f"
+    },
+    {
+      "path": "docs/interview-guide.md",
+      "bytes": 1638,
+      "sha256": "42b1865480c27d3468ec61a585f901819bd3262e7bd2a977837cdbc00834221a"
+    },
+    {
+      "path": "docs/provenance.md",
+      "bytes": 3643,
+      "sha256": "385b3c868f1ebfce0726319b3ebbfa4d70b4c5b7c8932d22bdf2ff073cc07550"
+    },
+    {
+      "path": "docs/reproduce.md",
+      "bytes": 5046,
+      "sha256": "cb5f35e8269b3d47bdf969000b1194229d8887d1230403e7de0d4bb6b92a4fe7"
+    },
+    {
+      "path": "docs/validation.md",
+      "bytes": 4144,
+      "sha256": "02f7ac093aa71d7eeb2cea6f31206881e2f5ce0861216d2995ed3300b4f7c01a"
+    },
+    {
+      "path": "examples/offline_demo.py",
+      "bytes": 4976,
+      "sha256": "1f7cde579204f069115fb1ec0275ecdc52fddcb87aa08e13335721e1877b9f00"
+    },
+    {
+      "path": "examples/prepare_demo.py",
+      "bytes": 1100,
+      "sha256": "5a68831279a5ecd7da038290e816f6010f48b538e17cc2bc43155cdac2ae7059"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 569,
+      "sha256": "1493d3c6dc519be249ce00621ec3a1cf34b44fa78ae00d340ddd3f529e311a4b"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 37,
+      "sha256": "b0f4bdf054c09cf24f8fe9cd2ac764221dd2f1bef1d93abba260fa2c0373fe6e"
+    },
+    {
+      "path": "requirements-runtime.txt",
+      "bytes": 1127,
+      "sha256": "7f97bd82e6631e4ae1176f812100f2fbe68a9a77e170b743940b3900d3e10bf7"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 33027,
+      "sha256": "200c8af94d5380c8d5fe663c55263f9419704809e2b5fd67a7e39678f2992f36"
+    },
+    {
+      "path": "scripts/verify_publication.py",
+      "bytes": 8539,
+      "sha256": "3fdd1479469f78938af44dc22dd9331dd8d0252166301a5f5e1d1b159eaa6489"
+    },
+    {
+      "path": "src/goalkeeper/__init__.py",
+      "bytes": 161,
+      "sha256": "da5c19c1a0bce5cbe0bc2b361802f2031d29d247168582f70854f9638c328ca7"
+    },
+    {
+      "path": "src/goalkeeper/auth.py",
+      "bytes": 13691,
+      "sha256": "fcf1f8a78a6ae925789cd28a1ebc92ec6f795e1ff44c86788d3c085fc57bf2fb"
+    },
+    {
+      "path": "src/goalkeeper/cli.py",
+      "bytes": 4756,
+      "sha256": "1bf5f91ff91e848a9714c9e383db1e6916fbf9d0f772206e047987ccbb1eac07"
+    },
+    {
+      "path": "src/goalkeeper/codex.py",
+      "bytes": 22113,
+      "sha256": "aaf3ebf3d8caf66e2d46d621046d1e3069f98405dbadc574e2c2aa9c85aaab52"
+    },
+    {
+      "path": "src/goalkeeper/compat.py",
+      "bytes": 1794,
+      "sha256": "b67869cf84d960982c1b973321e18beea64b97900d160e58805471da28692ff4"
+    },
+    {
+      "path": "src/goalkeeper/context.py",
+      "bytes": 6382,
+      "sha256": "12efecc925c87bf2dc821aff67f198377c03b8227197b8872839721c30f95b5d"
+    },
+    {
+      "path": "src/goalkeeper/cost.py",
+      "bytes": 4942,
+      "sha256": "2224caf36f3c148834708623ca588851a9d205fb476437ce42b2b8b34160b4eb"
+    },
+    {
+      "path": "src/goalkeeper/desktop/__init__.py",
+      "bytes": 72,
+      "sha256": "acfc72f83b4aed25e4e0f10e0793d94b63708d98329ba4d4f940f8fc74b9b549"
+    },
+    {
+      "path": "src/goalkeeper/desktop/answer_stream.py",
+      "bytes": 3369,
+      "sha256": "270267d1488d5170c528315e39f88d460cdc579a9001e2ea70abebf1aae101d5"
+    },
+    {
+      "path": "src/goalkeeper/desktop/diagnostics.py",
+      "bytes": 123,
+      "sha256": "5567b5c22bc0afcd788d6f3b708b7826de07ad0dbe34781b525f13f16768e57e"
+    },
+    {
+      "path": "src/goalkeeper/desktop/document_preview.py",
+      "bytes": 3658,
+      "sha256": "1757e7e55a88c9ba4b6f1dd041915ca9935246241b200733e8c98f605c9bac95"
+    },
+    {
+      "path": "src/goalkeeper/desktop/documents.py",
+      "bytes": 121,
+      "sha256": "0496e10ef8fff03d61842d91d9e7631286753fed266e57ff6e3d23716af71077"
+    },
+    {
+      "path": "src/goalkeeper/desktop/files.py",
+      "bytes": 198,
+      "sha256": "e46c8fce88210e116ca69bf0ac59d2bd5f643da00b607a3afcfa8112871801d6"
+    },
+    {
+      "path": "src/goalkeeper/desktop/images.py",
+      "bytes": 3854,
+      "sha256": "f011093279e9dcf03d22164eb6345ab048a8ca74c4379cdfc54675723d7a3e10"
+    },
+    {
+      "path": "src/goalkeeper/desktop/manager.py",
+      "bytes": 39692,
+      "sha256": "335f08bf11704e67628278e9e9a60da01fd09c0beb8ee862f025afd52c4f64e5"
+    },
+    {
+      "path": "src/goalkeeper/desktop/permissions.py",
+      "bytes": 202,
+      "sha256": "ad607249319c191aaf0bd39f28125343325d342bab9c54bbcc9d01aee4045ae9"
+    },
+    {
+      "path": "src/goalkeeper/desktop/preview_server.py",
+      "bytes": 2557,
+      "sha256": "810b866ea1a79e24f15800e91e3ea7c037a9aca457a2affd3a1ee842de8b8c17"
+    },
+    {
+      "path": "src/goalkeeper/desktop/processes.py",
+      "bytes": 199,
+      "sha256": "78d1a80eecf8eeb1aec71183488e529c7755a503681e33df5a6f9fe48ee477de"
+    },
+    {
+      "path": "src/goalkeeper/desktop/provider_catalog.py",
+      "bytes": 128,
+      "sha256": "e3cb1932c5d5ecdffa662480f43ede6151cede0fc3ef8aedf73297adcd6d78ca"
+    },
+    {
+      "path": "src/goalkeeper/desktop/providers.py",
+      "bytes": 10539,
+      "sha256": "0e4bd2a9b9000df588442285dff2888f382e4cef85d80b3ffe11b064e63844ef"
+    },
+    {
+      "path": "src/goalkeeper/desktop/service.py",
+      "bytes": 13791,
+      "sha256": "f5bad6c6005bc20dbfcb23a2a99a705377ac082905495142de2d6ad011d05c27"
+    },
+    {
+      "path": "src/goalkeeper/desktop/web.py",
+      "bytes": 115,
+      "sha256": "70aeb4c325246ecb68cb4d325acf483f46483164106c042b53aae55fe1ad32f5"
+    },
+    {
+      "path": "src/goalkeeper/engine.py",
+      "bytes": 42034,
+      "sha256": "0e004c9dc77833e89cf484dd9c6eec875d31bcaae0c4c9436866139f4b9615d8"
+    },
+    {
+      "path": "src/goalkeeper/evaluation.py",
+      "bytes": 24463,
+      "sha256": "745083302428fc0d70aa4ea6d0b9a85fc2909d232faebf2004b6a8695d1337bf"
+    },
+    {
+      "path": "src/goalkeeper/lifecycle.py",
+      "bytes": 449,
+      "sha256": "adfa9fe452ba0445718bfa3996d22acedde5fe41478293bb20c588e2a1549f43"
+    },
+    {
+      "path": "src/goalkeeper/login.py",
+      "bytes": 2172,
+      "sha256": "b465d483a451671f10e681ca3eebed74700a37683adb093dc982b5f2e6a876a2"
+    },
+    {
+      "path": "src/goalkeeper/models.py",
+      "bytes": 9170,
+      "sha256": "b6fd9b6de76a86256e1e434622f76e29f8f1b16cc0d67db272e0f3328c69eb52"
+    },
+    {
+      "path": "src/goalkeeper/native.py",
+      "bytes": 21392,
+      "sha256": "40c5bdddb824ac5de5e150369e726fb1afe0256ff75601d02c1b5c138f214e9d"
+    },
+    {
+      "path": "src/goalkeeper/native_log.py",
+      "bytes": 2705,
+      "sha256": "fb8e86ba0d8411875beb5be8d834094fea34b4940602db17a78af22ff443dff1"
+    },
+    {
+      "path": "src/goalkeeper/paths.py",
+      "bytes": 353,
+      "sha256": "762f00e4884a83bb6213ed2a695685080d8baf09a6fd36b7eb659c46190c218b"
+    },
+    {
+      "path": "src/goalkeeper/provider.py",
+      "bytes": 9387,
+      "sha256": "6b97274e9f20192166e40d7ef9eb09d271b8bd15fdcabd43a4a0427d98c2c653"
+    },
+    {
+      "path": "src/goalkeeper/readiness.py",
+      "bytes": 5316,
+      "sha256": "25e1f6e26bd4a3a7b4f38eb0278f7a4eac21374e47f3cd9b5126a0178661f28d"
+    },
+    {
+      "path": "src/goalkeeper/runtime/__init__.py",
+      "bytes": 81,
+      "sha256": "d6823d7900f38b831e9528bbdb842e7637222b7c1510037647193ba9b6e09a11"
+    },
+    {
+      "path": "src/goalkeeper/runtime/answer_stream.py",
+      "bytes": 3369,
+      "sha256": "270267d1488d5170c528315e39f88d460cdc579a9001e2ea70abebf1aae101d5"
+    },
+    {
+      "path": "src/goalkeeper/runtime/anthropic_provider.py",
+      "bytes": 6800,
+      "sha256": "6e8eafd446c65f9fbada2df4c8d2308a34d57adf0c0e05726dc6dbf9bdf8cf97"
+    },
+    {
+      "path": "src/goalkeeper/runtime/architecture.py",
+      "bytes": 2356,
+      "sha256": "5b6811eecb69f93c6caa172363fd4962c7cfcfd5fdac3a88f05366cdac39b881"
+    },
+    {
+      "path": "src/goalkeeper/runtime/bad_cases.py",
+      "bytes": 7551,
+      "sha256": "bf041143ce6d429d71d4d7d794eaa2b1df81515c3028f2d61696c6c273884e8d"
+    },
+    {
+      "path": "src/goalkeeper/runtime/bridge.py",
+      "bytes": 1005,
+      "sha256": "8c6b4b94ca783ba11e5d68d36aaa81590cce1083ff607a54e96dfbd17d825c1c"
+    },
+    {
+      "path": "src/goalkeeper/runtime/capabilities.py",
+      "bytes": 25232,
+      "sha256": "03a117be0f311ab89f6aeb0131d98071fffc4b9657f7019a5688f9f3a68aade6"
+    },
+    {
+      "path": "src/goalkeeper/runtime/checkpoints.py",
+      "bytes": 1361,
+      "sha256": "7447e4b84c4572c1bfbed5a658450274265e3ad07886a4352f13e8f2476f91ad"
+    },
+    {
+      "path": "src/goalkeeper/runtime/completion.py",
+      "bytes": 23092,
+      "sha256": "bb6b154d4d28f471bf32113fec09d84acab7ff7a44b7fbdc6b65b2e5215654cb"
+    },
+    {
+      "path": "src/goalkeeper/runtime/diagnostics.py",
+      "bytes": 2826,
+      "sha256": "95f9c5087b3a70a174bdcc2f4b68673042f25b628c3197aa85181675171ad4c9"
+    },
+    {
+      "path": "src/goalkeeper/runtime/documents.py",
+      "bytes": 2782,
+      "sha256": "4f126b9dab6b5689f7f27d45c99c525032065a520aae1c055d6bedc9761339d2"
+    },
+    {
+      "path": "src/goalkeeper/runtime/factory.py",
+      "bytes": 739,
+      "sha256": "2dc40fc04d8388e1a6524f7af351be0831c6170ea919b366e7022df2566ef775"
+    },
+    {
+      "path": "src/goalkeeper/runtime/files.py",
+      "bytes": 6238,
+      "sha256": "b370924c3b77951179c3f182324910f2e6341a286841e4f52d40fbf8cc51cf4f"
+    },
+    {
+      "path": "src/goalkeeper/runtime/images.py",
+      "bytes": 2732,
+      "sha256": "9236d46bdf43fa9ebfd26aec4ebbcbd8e8bc35fbfedb0b8365de013f5e13f3df"
+    },
+    {
+      "path": "src/goalkeeper/runtime/model_selection.py",
+      "bytes": 2920,
+      "sha256": "fee2da801b92422dd8bcd75a9dc6f47fac9d6eb99465bf6b4746a47603fdfc12"
+    },
+    {
+      "path": "src/goalkeeper/runtime/performance.py",
+      "bytes": 1773,
+      "sha256": "ecff948f810114a7747483ace76518a793c11f8d7816ac6d162f35ac226e8e51"
+    },
+    {
+      "path": "src/goalkeeper/runtime/permissions.py",
+      "bytes": 549,
+      "sha256": "6d873d5b5a883e53bbf55a583c3bff1e467cec8841498b9c57323cebd66045b4"
+    },
+    {
+      "path": "src/goalkeeper/runtime/preview_server.py",
+      "bytes": 2555,
+      "sha256": "6b1f7fe092870a008a2d99dd1540a1c374d98b008f1372ce4d7d247556a7d032"
+    },
+    {
+      "path": "src/goalkeeper/runtime/processes.py",
+      "bytes": 5501,
+      "sha256": "5ce5f6da064cc35ce3ea70f9a96f264871c6a3c1758379b2950074a0a7c01f34"
+    },
+    {
+      "path": "src/goalkeeper/runtime/prompts.py",
+      "bytes": 9435,
+      "sha256": "7019c6e40cf43064804a5e42fdde5eacb1faba2368f0168335eb8c61f7c844d5"
+    },
+    {
+      "path": "src/goalkeeper/runtime/provider_catalog.py",
+      "bytes": 4521,
+      "sha256": "76e7989538a04d5d5ea4f3e2e7b58c626aed7d1e5c57e3fc111617d5cc47b875"
+    },
+    {
+      "path": "src/goalkeeper/runtime/providers.py",
+      "bytes": 8637,
+      "sha256": "70fa820673100dcf869dac3a091cfd1bbf40ca43e7f595a23f0cc83c9fc2600d"
+    },
+    {
+      "path": "src/goalkeeper/runtime/report_flow.py",
+      "bytes": 13935,
+      "sha256": "9882261a6a4df7669b95765bef82c8bcb5f10c4b938391e43e21a9313e415cb0"
+    },
+    {
+      "path": "src/goalkeeper/runtime/report_validation.py",
+      "bytes": 3039,
+      "sha256": "977646ef01287f7191acfbcbd6c9ed39dcf27329bbb81d50fec395a6ed9de39a"
+    },
+    {
+      "path": "src/goalkeeper/runtime/research.py",
+      "bytes": 10754,
+      "sha256": "c34ec331a60b1b130fd57eae6a1e58ddfd3889c6c5466febddb28ab1bbebfc29"
+    },
+    {
+      "path": "src/goalkeeper/runtime/retry.py",
+      "bytes": 3137,
+      "sha256": "bf2029d13eb330168e9efe995d0ab23107e025d2de8d0e7d01905e406022cf89"
+    },
+    {
+      "path": "src/goalkeeper/runtime/services.py",
+      "bytes": 6877,
+      "sha256": "757225a241de5f15019269ad60e58ea0869caa46de9db0460ad9f3976eda889d"
+    },
+    {
+      "path": "src/goalkeeper/runtime/session.py",
+      "bytes": 27127,
+      "sha256": "4aa850f01a7ec6141c66f7bf9133e6b4ccc9100394d50519773bc243147ada7b"
+    },
+    {
+      "path": "src/goalkeeper/runtime/web.py",
+      "bytes": 4274,
+      "sha256": "6a2488672269bdec7c5198b476065668f71edec21ea1c829ac7233f3ce99e576"
+    },
+    {
+      "path": "src/goalkeeper/sandbox.py",
+      "bytes": 10915,
+      "sha256": "16cac439055a11c884a8fce2b89e2b3cf05e91d4b6c34d87205caac835b8b587"
+    },
+    {
+      "path": "src/goalkeeper/secrets.py",
+      "bytes": 1042,
+      "sha256": "334771d6ca40ff54690420eaa75cc76c440187ebb8042f16a6c46835c3f222e7"
+    },
+    {
+      "path": "src/goalkeeper/storage.py",
+      "bytes": 4706,
+      "sha256": "aedab569c116647e485c9d1c849b9bbc03ea930380cc21a3aa100b28c8d29c7f"
+    },
+    {
+      "path": "src/goalkeeper/streaming.py",
+      "bytes": 2825,
+      "sha256": "7a9537e31d58f81e235093168e0dff6aad62f71297f133a2b920892fbc22a0f6"
+    },
+    {
+      "path": "src/goalkeeper/tools.py",
+      "bytes": 10298,
+      "sha256": "8f5e64dd69c85701902ca8b3b1cfa1fd22c22166e429246bb2c8b20861e1da6a"
+    },
+    {
+      "path": "src/goalkeeper/transport.py",
+      "bytes": 28343,
+      "sha256": "116280ba87469aedee1350657e51cee8f5c4e72a26b3f55339717bfa7647260d"
+    },
+    {
+      "path": "src/goalkeeper/transport_forecast.py",
+      "bytes": 3529,
+      "sha256": "fd5d9267800cac7d39224b7dfacbb1aa8ca398dae766b2e97609b8f4d1ded939"
+    },
+    {
+      "path": "tests/conftest.py",
+      "bytes": 291,
+      "sha256": "635c3308c940f76d0bf80965c2003be21fce9d65fc526074da21f2caa702d5a8"
+    },
+    {
+      "path": "tests/test_publication_runtime.py",
+      "bytes": 4865,
+      "sha256": "b118e6570fc0e0ab96b58479cfcc611accf0da4cb9c17d59d39bf61ec9ac1524"
+    },
+    {
+      "path": "tests/test_unified_runtime.py",
+      "bytes": 6429,
+      "sha256": "45ec0450b615298531c5b2755036956ef03db4f54d80bb1e465ed6a29019e87b"
+    },
+    {
+      "path": "uv.lock",
+      "bytes": 133656,
+      "sha256": "1739c1cac9892a4f72405c22702a270869493c98733f23f1ee835f1808da83a5"
+    }
+  ],
+  "publication_approval_date": "2026-11-26",
+  "approved_repository": "jiajialearncool/goalkeeper-harness-v2.2"
+}

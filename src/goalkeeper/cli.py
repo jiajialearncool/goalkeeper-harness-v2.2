@@ -10,7 +10,7 @@ from pathlib import Path
 from uuid import uuid4
 
 from .cost import Tokens, totals
-from .engine import Engine
+from .runtime.factory import create_engine
 from .models import RunConfig, State, Task
 from .paths import DATA, PROJECT, inside_project
 from .storage import Store, save_report, snapshot
@@ -58,7 +58,8 @@ async def execute(args):
 
     if args.command == "resume":
         store = Store(inside_project(Path(args.run)))
-        state = store.load()
+        from .runtime.checkpoints import load_for_resume
+        state, store = load_for_resume(store)
     else:
         task = Task.model_validate_json(inside_project(Path(args.task)).read_text())
         config = RunConfig.model_validate_json(inside_project(Path(args.config)).read_text())
@@ -66,7 +67,7 @@ async def execute(args):
     os.environ["TIKTOKEN_CACHE_DIR"] = str(PROJECT / "work/tokenizer-cache")
     provider = ResponsesProvider(AuthBroker(DATA / "private"))
     try:
-        engine = Engine(state, store, provider, Tokens(tiktoken.get_encoding("o200k_base")))
+        engine = create_engine(state, store, provider, Tokens(tiktoken.get_encoding("o200k_base")))
         await engine.run(resume=args.command == "resume")
         print(json.dumps({"run": str(store.directory), "phase": state.phase, "cost": totals(state.calls)}, ensure_ascii=False))
     finally:

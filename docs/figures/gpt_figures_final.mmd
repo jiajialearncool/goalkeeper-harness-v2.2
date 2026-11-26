@@ -1,0 +1,105 @@
+% ========== 图1：GoalKeeper 执行总览（10 环节） ==========
+flowchart TD
+  A["① 桌面 / CLI / GoalKeeper 评测入口"] --> B["② 共用创建接口启动唯一 Engine"]
+  B --> C["③ 接收最新要求，整理本轮上下文"]
+  C --> M{"④ 主循环<br/>调用模型，主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 按权限执行工具，记录结果"]
+  T -->|result 回中心| M
+  M -.->|达到压缩阈值| X["⑥ 归档旧片段，校验摘要，保留近期记录"]
+  X -.-> M
+  M -.->|只回复文字| ST["⑦ 提醒继续，第二次无工具调用则停止"]
+  ST -.-> M
+  M -->|申请交付| G{"⑧ 交付闸门<br/>核对当前要求、产物与适用检查"}
+  G -.->|退回并说明原因| M
+  G -->|接受交付| D["⑨ 返回结果，保留交付快照"]
+  D --> R["⑩ 保存运行状态、摘要、事件和归档引用"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,ST,D common
+  class X,G diff
+  class R record
+
+% ========== 图2：Pi 的执行循环与会话扩展（9 环节） ==========
+flowchart TD
+  A["① TUI / 命令行输出 / RPC / SDK"] --> B["② Agent Session 加载设置和工具"]
+  B --> C["③ 组装提示与会话上下文"]
+  C --> M{"④ 主循环<br/>调用模型，主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 执行 read / write / edit / bash 等工具"]
+  T -->|result 回中心| M
+  M -.->|按需定制上下文| X["⑥ 扩展可注入或过滤上下文"]
+  X -.-> M
+  M -.->|接近上下文预算| P["⑦ 保存结构化摘要，保留近期记录"]
+  P -.-> M
+  M -->|本轮结束| O["⑧ 输出本轮回复"]
+  B -.-> R["⑨ 保存树状会话，可回到旧节点或分支"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,P,O common
+  class X,R diff
+
+% ========== 图3：GoalKeeper 连续执行与交付核对（对 Pi，9 环节） ==========
+flowchart TD
+  A["① 桌面 / CLI / GoalKeeper 评测入口"] --> B["② 共用创建接口启动唯一 Engine"]
+  B --> C["③ 接收最新要求，整理本轮上下文"]
+  C --> M{"④ 主循环<br/>调用模型，主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 按权限执行工具<br/>execute_steps 批量，另含 search/read_archive"]
+  T -->|result 回中心| M
+  M -.->|达到压缩阈值| X["⑥ 白盒压缩<br/>48000 触发，先归档再压 ≤2000 摘要"]
+  X -.-> M
+  M -->|申请交付| G{"⑦ 交付闸门<br/>按带 id 的 checks 强制逐项核对，全过才放行"}
+  G -.->|退回并说明原因| M
+  G -->|接受交付| D["⑧ 返回结果，保留交付快照"]
+  B -.-> R["⑨ 保存运行状态，可从检查点继续"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,X,D common
+  class T,G diff
+  class R record
+
+% ========== 图4：Codex CLI 执行循环与可选委派（9 环节） ==========
+flowchart TD
+  A["① 用户进入 Codex CLI"] --> B["② 加载会话与项目配置"]
+  B --> C["③ 组装指令、工具说明与历史"]
+  C --> M{"④ 主循环<br/>主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 按权限与沙箱策略执行工具"]
+  T -->|result 回中心| M
+  M -.->|需要压缩| P["⑥ 按配置和模型能力压缩，更新后续上下文"]
+  P -.-> M
+  M -.->|需要分工| S["⑦ 可委派给子 Agent"]
+  S -.->|子 Agent 返回结果| M
+  M -->|本轮结束| O["⑧ 输出本轮回复"]
+  B -.-> R["⑨ 运行中保存会话，支持恢复"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,O common
+  class P,S diff
+  class R record
+
+% ========== 图5：GoalKeeper 可检查归档与单主 Agent 交付（对 Codex，9 环节） ==========
+flowchart TD
+  A["① 桌面 / CLI / GoalKeeper 评测入口"] --> B["② 共用创建接口启动唯一 Engine"]
+  B --> C["③ 接收最新要求，整理本轮上下文"]
+  C --> M{"④ 主循环<br/>单主 Agent 决策，无子 Agent 编排"}
+  M -->|调用工具| T["⑤ 按权限执行工具<br/>execute_steps 一次 2–8 步，失败即停"]
+  T -->|result 回中心| M
+  M -.->|达到压缩阈值| X["⑥ 白盒压缩<br/>48000 触发，先归档再压 ≤2000 摘要，参数可配"]
+  X -.-> M
+  M -->|申请交付| G{"⑦ 交付闸门<br/>按带 id 的 checks 逐项核对，全过才放行"}
+  G -.->|退回并说明原因| M
+  G -->|接受交付| D["⑧ 返回结果，保留交付快照"]
+  B -.-> R["⑨ 保存运行状态，可从检查点继续"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,D common
+  class X,G diff
+  class R record

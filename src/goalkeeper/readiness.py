@@ -6,6 +6,9 @@ from .paths import PROJECT, inside_project
 from .storage import fingerprint, snapshot
 
 REQUIRED_TESTS = {
+    "test_single_runtime_architecture_and_shared_entry_factories",
+    "test_rejected_worker_cannot_overwrite_active_process_identity",
+    "test_legacy_state_read_is_lossless_and_does_not_rewrite_history",
     'test_sequential_turns_do_not_leak_or_reset_history_deadline',
     'test_pinned_codex_consumes_four_sequential_turns_without_inference',
     'test_actual_native_products_consume_four_sequential_local_turns[pi]',

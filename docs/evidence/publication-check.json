@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "failures": [],
+  "python_source_files": 68,
+  "source_files_with_hash": 71,
+  "architecture": {
+    "passed": true,
+    "engine": "goalkeeper.engine.Engine",
+    "source_files": 68
+  },
+  "approved_mermaid_blocks": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "local_file_links_checked": 156,
+  "historical_runs_recalculated": 64,
+  "efficiency_subsets_recalculated": [
+    "common_ten",
+    "business_three"
+  ],
+  "terminal_summary_batches_crosschecked": [
+    2,
+    3,
+    4
+  ],
+  "external_links": "checked separately; not covered by local path check",
+  "paid_model_evaluations_run": false
+}

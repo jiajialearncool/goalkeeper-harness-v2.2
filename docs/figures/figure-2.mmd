@@ -1,0 +1,19 @@
+flowchart TD
+  A["① TUI / 命令行输出 / RPC / SDK"] --> B["② Agent Session 加载设置和工具"]
+  B --> C["③ 组装提示与会话上下文"]
+  C --> M{"④ 主循环<br/>调用模型，主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 执行 read / write / edit / bash 等工具"]
+  T -->|result 回中心| M
+  M -.->|按需定制上下文| X["⑥ 扩展可注入或过滤上下文"]
+  X -.-> M
+  M -.->|接近上下文预算| P["⑦ 保存结构化摘要，保留近期记录"]
+  P -.-> M
+  M -->|本轮结束| O["⑧ 输出本轮回复"]
+  B -.-> R["⑨ 保存树状会话，可回到旧节点或分支"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,P,O common
+  class X,R diff
+

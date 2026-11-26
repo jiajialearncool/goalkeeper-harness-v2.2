@@ -52,6 +52,9 @@ class Store:
     def save(self, state: State, kind: str, data=None) -> None:
         if self.path.exists() and self.load().sequence != state.sequence:
             raise RuntimeError("stale_checkpoint")
+        if state.phase in {"running", "prepared"}:
+            import time
+            state.remaining_seconds = max(0, state.deadline - time.time())
         sequence = state.sequence + 1
         event = {"sequence": sequence, "at": utcnow(), "kind": kind, "data": redact(data or {})}
         value = state.model_dump()
@@ -86,10 +89,10 @@ class Store:
     def read(self, reference: str) -> str:
         if len(reference) != 64 or any(c not in "0123456789abcdef" for c in reference):
             raise ValueError("无效归档引用。")
-        raw = (self.archives / reference).read_text()
-        if hashlib.sha256(raw.encode()).hexdigest() != reference:
+        raw = (self.archives / reference).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != reference:
             raise ValueError("归档校验不一致。")
-        return raw
+        return raw.decode("utf-8")
 
     def lease(self):
         return Lease(self.directory / "run.lock")

@@ -1,0 +1,20 @@
+flowchart TD
+  A["① 用户进入 Codex CLI"] --> B["② 加载会话与项目配置"]
+  B --> C["③ 组装指令、工具说明与历史"]
+  C --> M{"④ 主循环<br/>主 Agent 决定下一步"}
+  M -->|调用工具| T["⑤ 按权限与沙箱策略执行工具"]
+  T -->|result 回中心| M
+  M -.->|需要压缩| P["⑥ 按配置和模型能力压缩，更新后续上下文"]
+  P -.-> M
+  M -.->|需要分工| S["⑦ 可委派给子 Agent"]
+  S -.->|子 Agent 返回结果| M
+  M -->|本轮结束| O["⑧ 输出本轮回复"]
+  B -.-> R["⑨ 运行中保存会话，支持恢复"]
+
+  classDef common fill:#EAF2FF,stroke:#3569A8,color:#172B4D,stroke-width:1px
+  classDef diff fill:#FFF0DB,stroke:#A85108,color:#5A300A,stroke-width:2px
+  classDef record fill:#F1F3F5,stroke:#667085,color:#283548,stroke-width:1px
+  class A,B,C,M,T,O common
+  class P,S diff
+  class R record
+

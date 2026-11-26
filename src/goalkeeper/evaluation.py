@@ -12,7 +12,7 @@ import httpx
 
 from .cli import create
 from .cost import Tokens
-from .engine import Engine
+from .runtime.factory import create_engine
 from .models import RunConfig, Task
 from .lifecycle import finish_cleanup
 from .native import Native, objective
@@ -257,6 +257,8 @@ async def evaluate(package, authorized=False, shared_limit=None, readiness=None,
     if unlimited_tokens and any(value is not None for value in
             (config.token_budget, config.summary_budget_fraction, config.summary_time_fraction)):
         raise ValueError("不限 token 模式要求整题和摘要额度全部关闭，未调用模型。")
+    config = config.model_copy(update={"effort": "xhigh", "task_profile": "general", "adaptive_effort": False, "transient_retries": transient_retries})
+    config.require_evaluation_model()
     # Validate all four task preparations before opening an authenticated route.
     if max(len(objective(task, i) + ("\n用户追加要求：" + task.feedback.text if task.feedback else ""))
            for i in range(len(task.user_turns) + 1)) > 4000:
@@ -316,7 +318,7 @@ async def evaluate(package, authorized=False, shared_limit=None, readiness=None,
                         await original.aclose()
 
                 provider = ResponsesProvider(LocalAuth(), http=LocalClient())
-                engine = Engine(state, store, provider, Tokens(encoding))
+                engine = create_engine(state, store, provider, Tokens(encoding), transport_manages_retries=True)
                 try:
                     await execute_until_stopped(engine.run(), transport, state.id, state.deadline, grace)
                 finally:

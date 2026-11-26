@@ -1,0 +1,90 @@
+{
+  "benchmark": "Terminal-Bench 2.1",
+  "batch": 4,
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "medium",
+  "official_source_commit": "7131e4375048a0e408a8fb404b5f499d726b695b",
+  "capability_profile": "native_defaults",
+  "native_capabilities_audit": {
+    "campaign": "private-runs/batch4-2.2.4-native-official-20261018-c",
+    "checked_runs": 20,
+    "native_profile_verified": true,
+    "tasks": [
+      "kv-store-grpc",
+      "polyglot-c-py",
+      "custom-memory-heap-crash",
+      "fix-code-vulnerability",
+      "llm-inference-batching-scheduler"
+    ],
+    "groups": [
+      "goalkeeper-2.2.4",
+      "package-harness",
+      "codex-native",
+      "pi-native"
+    ],
+    "findings": []
+  },
+  "tasks": [
+    "kv-store-grpc",
+    "polyglot-c-py",
+    "custom-memory-heap-crash",
+    "fix-code-vulnerability",
+    "llm-inference-batching-scheduler"
+  ],
+  "official_timeouts": {
+    "custom-memory-heap-crash": {
+      "agent_seconds": 1800.0,
+      "verifier_seconds": 1800.0
+    },
+    "fix-code-vulnerability": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    },
+    "kv-store-grpc": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    },
+    "llm-inference-batching-scheduler": {
+      "agent_seconds": 1800.0,
+      "verifier_seconds": 1800.0
+    },
+    "polyglot-c-py": {
+      "agent_seconds": 900.0,
+      "verifier_seconds": 900.0
+    }
+  },
+  "summary": {
+    "goalkeeper-2.2.4": {
+      "passed": 5,
+      "total": 5,
+      "wall_seconds": 722.6568767920253,
+      "tokens": 777809,
+      "model_calls": 72,
+      "usage_complete": true
+    },
+    "package-harness": {
+      "passed": 5,
+      "total": 5,
+      "wall_seconds": 540.8668092090229,
+      "tokens": 615692,
+      "model_calls": 46,
+      "usage_complete": true
+    },
+    "codex-native": {
+      "passed": 4,
+      "total": 5,
+      "wall_seconds": 714.6935869580193,
+      "tokens": 1223609,
+      "model_calls": 58,
+      "usage_complete": true
+    },
+    "pi-native": {
+      "passed": 5,
+      "total": 5,
+      "wall_seconds": 741.3997708760435,
+      "tokens": 572712,
+      "model_calls": 48,
+      "usage_complete": true
+    }
+  }
+}

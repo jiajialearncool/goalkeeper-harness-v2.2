@@ -1,0 +1,443 @@
+{
+  "version": "2.2.4",
+  "origin": "retained-20261017-app-backend",
+  "handoff_zip_sha256": "08718eb034d3a15e7d1ec31ce9ebc4774260bf3bc600ae817b5c6ff1a5b0a85e",
+  "handoff_manifest_sha256": "906317b9398d2f9c2a4b97096e537f16c257ecada951c3734d6358ea89951fe8",
+  "source_file_count": 71,
+  "python_source_count": 68,
+  "files": [
+    {
+      "path": "src/goalkeeper/__init__.py",
+      "sha256": "da5c19c1a0bce5cbe0bc2b361802f2031d29d247168582f70854f9638c328ca7",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/auth.py",
+      "sha256": "fcf1f8a78a6ae925789cd28a1ebc92ec6f795e1ff44c86788d3c085fc57bf2fb",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/cli.py",
+      "sha256": "1bf5f91ff91e848a9714c9e383db1e6916fbf9d0f772206e047987ccbb1eac07",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/codex.py",
+      "sha256": "aaf3ebf3d8caf66e2d46d621046d1e3069f98405dbadc574e2c2aa9c85aaab52",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/compat.py",
+      "sha256": "b67869cf84d960982c1b973321e18beea64b97900d160e58805471da28692ff4",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/context.py",
+      "sha256": "12efecc925c87bf2dc821aff67f198377c03b8227197b8872839721c30f95b5d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/cost.py",
+      "sha256": "2224caf36f3c148834708623ca588851a9d205fb476437ce42b2b8b34160b4eb",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/__init__.py",
+      "sha256": "acfc72f83b4aed25e4e0f10e0793d94b63708d98329ba4d4f940f8fc74b9b549",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/answer_stream.py",
+      "sha256": "270267d1488d5170c528315e39f88d460cdc579a9001e2ea70abebf1aae101d5",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/diagnostics.py",
+      "sha256": "5567b5c22bc0afcd788d6f3b708b7826de07ad0dbe34781b525f13f16768e57e",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/document_preview.py",
+      "sha256": "1757e7e55a88c9ba4b6f1dd041915ca9935246241b200733e8c98f605c9bac95",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/documents.py",
+      "sha256": "0496e10ef8fff03d61842d91d9e7631286753fed266e57ff6e3d23716af71077",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/files.py",
+      "sha256": "e46c8fce88210e116ca69bf0ac59d2bd5f643da00b607a3afcfa8112871801d6",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/images.py",
+      "sha256": "f011093279e9dcf03d22164eb6345ab048a8ca74c4379cdfc54675723d7a3e10",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/manager.py",
+      "sha256": "335f08bf11704e67628278e9e9a60da01fd09c0beb8ee862f025afd52c4f64e5",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/permissions.py",
+      "sha256": "ad607249319c191aaf0bd39f28125343325d342bab9c54bbcc9d01aee4045ae9",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/preview_server.py",
+      "sha256": "810b866ea1a79e24f15800e91e3ea7c037a9aca457a2affd3a1ee842de8b8c17",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/processes.py",
+      "sha256": "78d1a80eecf8eeb1aec71183488e529c7755a503681e33df5a6f9fe48ee477de",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/provider_catalog.py",
+      "sha256": "e3cb1932c5d5ecdffa662480f43ede6151cede0fc3ef8aedf73297adcd6d78ca",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/providers.py",
+      "sha256": "0e4bd2a9b9000df588442285dff2888f382e4cef85d80b3ffe11b064e63844ef",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/service.py",
+      "sha256": "f5bad6c6005bc20dbfcb23a2a99a705377ac082905495142de2d6ad011d05c27",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/desktop/web.py",
+      "sha256": "70aeb4c325246ecb68cb4d325acf483f46483164106c042b53aae55fe1ad32f5",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/engine.py",
+      "sha256": "0e004c9dc77833e89cf484dd9c6eec875d31bcaae0c4c9436866139f4b9615d8",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/evaluation.py",
+      "sha256": "745083302428fc0d70aa4ea6d0b9a85fc2909d232faebf2004b6a8695d1337bf",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/lifecycle.py",
+      "sha256": "adfa9fe452ba0445718bfa3996d22acedde5fe41478293bb20c588e2a1549f43",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/login.py",
+      "sha256": "b465d483a451671f10e681ca3eebed74700a37683adb093dc982b5f2e6a876a2",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/models.py",
+      "sha256": "b6fd9b6de76a86256e1e434622f76e29f8f1b16cc0d67db272e0f3328c69eb52",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/native.py",
+      "sha256": "40c5bdddb824ac5de5e150369e726fb1afe0256ff75601d02c1b5c138f214e9d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/native_log.py",
+      "sha256": "fb8e86ba0d8411875beb5be8d834094fea34b4940602db17a78af22ff443dff1",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/paths.py",
+      "sha256": "762f00e4884a83bb6213ed2a695685080d8baf09a6fd36b7eb659c46190c218b",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/provider.py",
+      "sha256": "6b97274e9f20192166e40d7ef9eb09d271b8bd15fdcabd43a4a0427d98c2c653",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/readiness.py",
+      "sha256": "25e1f6e26bd4a3a7b4f38eb0278f7a4eac21374e47f3cd9b5126a0178661f28d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/__init__.py",
+      "sha256": "d6823d7900f38b831e9528bbdb842e7637222b7c1510037647193ba9b6e09a11",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/answer_stream.py",
+      "sha256": "270267d1488d5170c528315e39f88d460cdc579a9001e2ea70abebf1aae101d5",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/anthropic_provider.py",
+      "sha256": "6e8eafd446c65f9fbada2df4c8d2308a34d57adf0c0e05726dc6dbf9bdf8cf97",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/architecture.py",
+      "sha256": "5b6811eecb69f93c6caa172363fd4962c7cfcfd5fdac3a88f05366cdac39b881",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/bad_cases.py",
+      "sha256": "bf041143ce6d429d71d4d7d794eaa2b1df81515c3028f2d61696c6c273884e8d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/bridge.py",
+      "sha256": "8c6b4b94ca783ba11e5d68d36aaa81590cce1083ff607a54e96dfbd17d825c1c",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/capabilities.py",
+      "sha256": "03a117be0f311ab89f6aeb0131d98071fffc4b9657f7019a5688f9f3a68aade6",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/checkpoints.py",
+      "sha256": "7447e4b84c4572c1bfbed5a658450274265e3ad07886a4352f13e8f2476f91ad",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/completion.py",
+      "sha256": "bb6b154d4d28f471bf32113fec09d84acab7ff7a44b7fbdc6b65b2e5215654cb",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/diagnostics.py",
+      "sha256": "95f9c5087b3a70a174bdcc2f4b68673042f25b628c3197aa85181675171ad4c9",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/documents.py",
+      "sha256": "4f126b9dab6b5689f7f27d45c99c525032065a520aae1c055d6bedc9761339d2",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/factory.py",
+      "sha256": "2dc40fc04d8388e1a6524f7af351be0831c6170ea919b366e7022df2566ef775",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/files.py",
+      "sha256": "b370924c3b77951179c3f182324910f2e6341a286841e4f52d40fbf8cc51cf4f",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/images.py",
+      "sha256": "9236d46bdf43fa9ebfd26aec4ebbcbd8e8bc35fbfedb0b8365de013f5e13f3df",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/model_selection.py",
+      "sha256": "fee2da801b92422dd8bcd75a9dc6f47fac9d6eb99465bf6b4746a47603fdfc12",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/performance.py",
+      "sha256": "ecff948f810114a7747483ace76518a793c11f8d7816ac6d162f35ac226e8e51",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/permissions.py",
+      "sha256": "6d873d5b5a883e53bbf55a583c3bff1e467cec8841498b9c57323cebd66045b4",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/preview_server.py",
+      "sha256": "6b1f7fe092870a008a2d99dd1540a1c374d98b008f1372ce4d7d247556a7d032",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/processes.py",
+      "sha256": "5ce5f6da064cc35ce3ea70f9a96f264871c6a3c1758379b2950074a0a7c01f34",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/prompts.py",
+      "sha256": "7019c6e40cf43064804a5e42fdde5eacb1faba2368f0168335eb8c61f7c844d5",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/provider_catalog.py",
+      "sha256": "76e7989538a04d5d5ea4f3e2e7b58c626aed7d1e5c57e3fc111617d5cc47b875",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/providers.py",
+      "sha256": "70fa820673100dcf869dac3a091cfd1bbf40ca43e7f595a23f0cc83c9fc2600d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/report_flow.py",
+      "sha256": "9882261a6a4df7669b95765bef82c8bcb5f10c4b938391e43e21a9313e415cb0",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/report_validation.py",
+      "sha256": "977646ef01287f7191acfbcbd6c9ed39dcf27329bbb81d50fec395a6ed9de39a",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/research.py",
+      "sha256": "c34ec331a60b1b130fd57eae6a1e58ddfd3889c6c5466febddb28ab1bbebfc29",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/retry.py",
+      "sha256": "bf2029d13eb330168e9efe995d0ab23107e025d2de8d0e7d01905e406022cf89",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/services.py",
+      "sha256": "757225a241de5f15019269ad60e58ea0869caa46de9db0460ad9f3976eda889d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/session.py",
+      "sha256": "4aa850f01a7ec6141c66f7bf9133e6b4ccc9100394d50519773bc243147ada7b",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/runtime/web.py",
+      "sha256": "6a2488672269bdec7c5198b476065668f71edec21ea1c829ac7233f3ce99e576",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/sandbox.py",
+      "sha256": "16cac439055a11c884a8fce2b89e2b3cf05e91d4b6c34d87205caac835b8b587",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/secrets.py",
+      "sha256": "334771d6ca40ff54690420eaa75cc76c440187ebb8042f16a6c46835c3f222e7",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/storage.py",
+      "sha256": "aedab569c116647e485c9d1c849b9bbc03ea930380cc21a3aa100b28c8d29c7f",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/streaming.py",
+      "sha256": "7a9537e31d58f81e235093168e0dff6aad62f71297f133a2b920892fbc22a0f6",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/tools.py",
+      "sha256": "8f5e64dd69c85701902ca8b3b1cfa1fd22c22166e429246bb2c8b20861e1da6a",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/transport.py",
+      "sha256": "116280ba87469aedee1350657e51cee8f5c4e72a26b3f55339717bfa7647260d",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "src/goalkeeper/transport_forecast.py",
+      "sha256": "fd5d9267800cac7d39224b7dfacbb1aa8ca398dae766b2e97609b8f4d1ded939",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "configs/default.json",
+      "sha256": "34ae88d15f26995c007d3e2a46f768dbc7ce0a26e4736e95c46268bc009420b0",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "200c8af94d5380c8d5fe663c55263f9419704809e2b5fd67a7e39678f2992f36",
+      "origin": "verified-2.2.4-app-backend",
+      "modified": false
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "1739c1cac9892a4f72405c22702a270869493c98733f23f1ee835f1808da83a5",
+      "origin": "same-retained-app-distribution-manifest",
+      "modified": false
+    }
+  ],
+  "supplements": {
+    "uv.lock": {
+      "source": "same retained 20261017 app; all 68 Python files matched handoff",
+      "source_distribution_manifest_sha256": "c3e86899646ed8c9534ff31b0608ea331dd9771a0da144f6c1bb2c6e0773a861",
+      "expected_sha256": "1739c1cac9892a4f72405c22702a270869493c98733f23f1ee835f1808da83a5"
+    }
+  }
+}

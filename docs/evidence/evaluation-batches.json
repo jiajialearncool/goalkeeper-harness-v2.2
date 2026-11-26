@@ -1,0 +1,27 @@
+[
+  {
+    "batch": 1,
+    "goalkeeper_version": "2.2.2",
+    "report": "docs/evidence/reports/terminal-bench/batch1-2.2.2-report.md"
+  },
+  {
+    "batch": 2,
+    "goalkeeper_version": "2.2.4",
+    "report": "docs/evidence/reports/terminal-bench/batch2-2.2.4-report.md"
+  },
+  {
+    "batch": 3,
+    "goalkeeper_version": "2.2.4",
+    "report": "docs/evidence/reports/terminal-bench/batch3-2.2.4-report.md"
+  },
+  {
+    "batch": 4,
+    "goalkeeper_version": "2.2.4",
+    "report": "docs/evidence/reports/terminal-bench/batch4-2.2.4-report.md"
+  },
+  {
+    "batch": 5,
+    "goalkeeper_version": "2.2.4",
+    "report": "docs/evidence/reports/terminal-bench/batch5-2.2.4-comparison-report.md"
+  }
+]

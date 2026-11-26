@@ -1,0 +1,53 @@
+{
+  "all_five_rendered": true,
+  "renderer": "mermaid@11.12.2",
+  "page_errors": [],
+  "github_live_preview_checked": false,
+  "figures": [
+    {
+      "number": 1,
+      "renderer": "mermaid@11.12.2",
+      "source_unchanged": true,
+      "rendered": true,
+      "svg": "docs/figures/figure-1.svg",
+      "width": 1248.5,
+      "height": 1334
+    },
+    {
+      "number": 2,
+      "renderer": "mermaid@11.12.2",
+      "source_unchanged": true,
+      "rendered": true,
+      "svg": "docs/figures/figure-2.svg",
+      "width": 1120.65625,
+      "height": 854
+    },
+    {
+      "number": 3,
+      "renderer": "mermaid@11.12.2",
+      "source_unchanged": true,
+      "rendered": true,
+      "svg": "docs/figures/figure-3.svg",
+      "width": 945.625,
+      "height": 1206
+    },
+    {
+      "number": 4,
+      "renderer": "mermaid@11.12.2",
+      "source_unchanged": true,
+      "rendered": true,
+      "svg": "docs/figures/figure-4.svg",
+      "width": 1073.46875,
+      "height": 732.140625
+    },
+    {
+      "number": 5,
+      "renderer": "mermaid@11.12.2",
+      "source_unchanged": true,
+      "rendered": true,
+      "svg": "docs/figures/figure-5.svg",
+      "width": 945.625,
+      "height": 1206
+    }
+  ]
+}

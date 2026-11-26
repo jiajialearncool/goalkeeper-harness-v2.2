@@ -6,10 +6,10 @@ UNSUPPORTED = {"background", "conversation", "max_output_tokens", "max_tool_call
                "temperature", "top_logprobs", "top_p", "truncation", "user", "previous_response_id"}
 
 
-def subscription_payload(body):
+def subscription_payload(body, *, expected_model=MODEL, expected_effort=EFFORT):
     if not isinstance(body, dict) or not isinstance(body.get("reasoning"), dict):
         raise ValueError("请求与reasoning必须是对象。")
-    if body.get("model") != MODEL or body.get("reasoning", {}).get("effort") != EFFORT:
+    if body.get("model") != expected_model or body.get("reasoning", {}).get("effort") != expected_effort:
         raise ValueError("model_effort_mismatch")
     if not isinstance(body.get("input"), list) or body.get("previous_response_id"):
         raise ValueError("完整历史必须通过数组提供。")

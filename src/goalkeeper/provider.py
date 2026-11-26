@@ -117,6 +117,13 @@ class ResponsesProvider:
             async with self.http.stream(
                 "POST", f"{RESOURCE}/responses", json=payload, headers={"Authorization": f"Bearer {token}"}
             ) as response:
+                metadata = {"http_status": response.status_code}
+                request_id = response.headers.get("x-request-id")
+                if request_id and len(request_id) <= 128 and all(
+                    c.isascii() and (c.isalnum() or c in "_-") for c in request_id
+                ):
+                    metadata["request_id"] = request_id
+                yield ModelEvent(type="provider_response_metadata", data=metadata)
                 if response.status_code != 200:
                     body = await response.aread()
                     try:
